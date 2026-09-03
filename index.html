@@ -294,7 +294,7 @@
       letters.forEach(function(s){ s.classList.add('reset'); s.classList.remove('out'); });
       void h.offsetWidth;
       letters.forEach(function(s){ s.classList.remove('reset'); });
-      setTimeout(done, 200);
+      setTimeout(done, 1200);
     }, letters.length*24+760);
   }
   function rollIn(){
@@ -306,7 +306,7 @@
       i++; setTimeout(step,58);
     })();
   }
-  setTimeout(rollIn, 240);
+  setTimeout(rollIn, 1500);
 })();
 (function(){
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
