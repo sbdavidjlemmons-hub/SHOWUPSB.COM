@@ -47,7 +47,7 @@
                linear-gradient(90deg,rgba(20,56,63,.7) 0%,rgba(20,56,63,.25) 45%,rgba(20,56,63,0) 70%)}
   .stage{position:relative;width:100%;max-width:1080px;margin:0 auto;padding:120px 24px 84px;min-height:620px}
   .panel{position:absolute;border-radius:6px;box-shadow:0 30px 60px -20px rgba(0,0,0,.55)}
-  .p-ink{left:24px;bottom:150px;width:min(680px,calc(100% - 48px));background:transparent;color:var(--panel-ink-text);padding:0;z-index:2;box-shadow:none;border-radius:0}
+  .p-ink{left:24px;bottom:130px;width:min(680px,calc(100% - 48px));background:transparent;color:var(--panel-ink-text);padding:0;z-index:2;box-shadow:none;border-radius:0}
   .p-ink .label{color:var(--marigold);margin-bottom:14px;display:block;text-shadow:0 1px 3px rgba(0,0,0,.6)}
   .p-ink h1{font-size:clamp(46px,8vw,104px);font-weight:800;letter-spacing:-.02em;color:#FBF7EC;text-shadow:0 2px 6px rgba(0,0,0,.45),0 10px 30px rgba(0,0,0,.45)}
   .p-ink h1 .glow{color:var(--marigold);display:inline-block}
@@ -55,9 +55,6 @@
   .p-ink h1 .w{display:inline-block;perspective:700px}
   .p-ink h1 .ltr{display:inline-block;will-change:transform,opacity;backface-visibility:hidden}
   .p-ink p{margin-top:18px;font-size:clamp(17px,2vw,21px);color:#EEF3EF;max-width:30em;text-shadow:0 1px 3px rgba(0,0,0,.6),0 6px 18px rgba(0,0,0,.4)}
-  .p-sun{right:24px;bottom:56px;width:min(440px,calc(100% - 48px));background:var(--panel-sun);color:var(--panel-sun-text);padding:28px 30px;z-index:3}
-  .p-sun .label{color:#6B4409;display:block;margin-bottom:10px}
-  .p-sun p{font-size:clamp(18px,2.1vw,23px);line-height:1.35;font-weight:500}
   .p-chip{top:36px;right:24px;background:var(--chip);color:var(--chip-text);padding:10px 16px;font-family:'Public Sans',Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;z-index:4;border-radius:999px;display:flex;gap:10px;align-items:center}
   .p-chip .dot{width:9px;height:9px;border-radius:50%;background:var(--marigold);display:inline-block}
   .hero .ctas{position:absolute;left:24px;bottom:56px;display:flex;gap:12px;flex-wrap:wrap;z-index:5}
@@ -71,14 +68,12 @@
     .p-ink{padding:0 4px}
     .p-ink h1{font-size:clamp(42px,12vw,64px)}
     .p-ink p{max-width:none}
-    .p-sun{width:calc(100% - 18px);margin:-16px 0 0 18px;padding:22px 22px}
     .hero .ctas{position:static;margin-top:18px}
     .hero .credit{position:static;margin-top:12px;align-self:flex-end;text-align:right}
   }
   /* kinetic: slow float, staggered; visible at rest */
   @media (prefers-reduced-motion: no-preference){
     .p-ink{animation:float-a 8.5s ease-in-out infinite, arrive-l .9s cubic-bezier(.2,.8,.2,1) both}
-    .p-sun{animation:float-b 7.2s ease-in-out infinite .6s, arrive-r 1s cubic-bezier(.2,.8,.2,1) .15s both}
     .p-chip{animation:float-c 6.4s ease-in-out infinite 1.1s, arrive-d .8s cubic-bezier(.2,.8,.2,1) .3s both}
     .p-ink h1 .glow{animation:glow 3.6s ease-in-out infinite}
     .p-ink h1.live .ltr{opacity:0;transform:translateY(.42em) rotateX(-78deg);transform-origin:50% 100%;transition:opacity .3s ease,transform .55s cubic-bezier(.22,.9,.28,1)}
@@ -97,7 +92,7 @@
   /* ---------- DEDICATION ---------- */
   .dedic{background:var(--sand);padding:78px 0 70px}
   .dedic .label{color:var(--teal)}
-  .dedic h2{font-size:clamp(30px,4.6vw,50px);font-weight:800;margin:14px 0 22px;max-width:16em}
+  .dedic h2{font-size:clamp(28px,4.2vw,46px);font-weight:800;margin:14px 0 22px;max-width:18em;border-left:8px solid var(--marigold);padding-left:20px}
   .dedic p{max-width:36em;font-size:clamp(19px,2.2vw,23px);color:var(--ink)}
   .dedic p + p{margin-top:16px}
   .dedic em{font-style:italic;color:var(--marigold-ink)}
@@ -171,14 +166,8 @@
     <div class="panel p-chip"><span class="dot" aria-hidden="true"></span> showupsb.com · launching 2026</div>
 
     <div class="panel p-ink">
-      <span class="label">Santa Barbara, California</span>
       <h1 id="hl"><span class="w">Show up,</span><br><span class="w">Santa </span><span class="w glow">Barbara.</span></h1>
       <p>One place for this community to be heard — and one place where the help that gets funded actually reaches the people it was funded for.</p>
-    </div>
-
-    <div class="panel p-sun">
-      <span class="label">Who this is for</span>
-      <p>From the highest office of the largest organization down to the quietest voice — the one everybody walks past.</p>
     </div>
 
     <div class="ctas">
@@ -191,17 +180,17 @@
 
 <section class="dedic">
   <div class="wrap">
-    <div class="label">The dedication</div>
-    <h2>This is for the ones everybody walks past.</h2>
-    <p>The teens. The women. The silent ones on the street. And everyone in between. This platform is dedicated to them first — because a community is measured by how it treats the people it finds easiest to ignore.</p>
-    <p>It is also for every provider, business, and neighbor who is already doing this work right. <em>You deserve to be seen, funded, and copied.</em></p>
+    <div class="label">Who this is for</div>
+    <h2>From the highest office of the largest organization down to the quietest voice — the one everybody walks past.</h2>
+    <p>The teens. The women. The silent ones on the street. And everyone in between. This platform is dedicated to them first.</p>
+    <p>And to every provider, business, and neighbor already doing this work right: <em>you deserve to be seen, funded, and copied.</em></p>
   </div>
 </section>
 
 <section class="engines" id="what">
   <div class="wrap">
     <h2>What Show Up Santa Barbara does</h2>
-    <p class="intro">Not another program. A hub — connecting what this county already has to the people who need it, and making the connections visible.</p>
+    <p class="intro">Connecting what this county already has to the people who need it.</p>
     <div class="egrid">
       <div class="engine"><span class="label">The Directory</span><h3>Every service, one page</h3><p>Housing, recovery, reentry, food, mental health, vocational — every provider in the county, linked directly, kept current.</p></div>
       <div class="engine"><span class="label">The Board</span><h3>Sober life, posted daily</h3><p>Beach walks, hikes, coffee, game nights. Small groups, no pressure, nothing clinical. Post in under a minute. Come alone — that's normal here.</p></div>
@@ -230,15 +219,15 @@
 <section class="open" id="open">
   <div class="wrap">
     <h2>Built in the open, from day one.</h2>
-    <p class="intro">This is thought through, not a hope. Here is who sits at the table.</p>
+    <p class="intro">Who sits at the table.</p>
     <div class="seats">
-      <div class="seat"><span class="label">Seat</span><b>Psychiatrist</b><span>Clinical oversight</span></div>
-      <div class="seat"><span class="label">Seat</span><b>Psychologist</b><span>Behavioral health</span></div>
-      <div class="seat"><span class="label">Seat</span><b>Nonprofit attorney</b><span>Governance and compliance</span></div>
-      <div class="seat"><span class="label">Seat</span><b>Service-provider leader</b><span>The provider side of the table</span></div>
-      <div class="seat"><span class="label">Seat</span><b>Street-outreach program</b><span>The people on foot</span></div>
-      <div class="seat"><span class="label">Team</span><b>Marketing</b><span>Getting the word out</span></div>
-      <div class="seat"><span class="label">Team</span><b>Donations</b><span>Goods in, as a cooperative — so providers don't spend funds buying what the community can give</span></div>
+      <div class="seat"><b>Psychiatrist</b><span>Clinical oversight</span></div>
+      <div class="seat"><b>Psychologist</b><span>Behavioral health</span></div>
+      <div class="seat"><b>Nonprofit attorney</b><span>Governance and compliance</span></div>
+      <div class="seat"><b>Service-provider leader</b><span>The provider side of the table</span></div>
+      <div class="seat"><b>Street-outreach program</b><span>The people on foot</span></div>
+      <div class="seat"><b>Marketing</b><span>Getting the word out</span></div>
+      <div class="seat"><b>Donations</b><span>Goods in, as a cooperative — so providers don't spend funds buying what the community can give</span></div>
     </div>
     <div class="money">
       <h3>Not one dollar goes to the founder.</h3>
@@ -272,7 +261,6 @@
     <p>Providers, businesses, and neighbors: claim your place, be recognized at the public launch, and help build the one hub this county has been missing.</p>
     <div class="row">
       <a class="btn btn-sun" href="mailto:sb.david.j.lemmons@gmail.com?subject=Show%20Up%20SB%20%E2%80%94%20Founding%20Partner">Become a founding partner</a>
-      <a class="btn btn-ink" href="#top">Back to the top</a>
     </div>
   </div>
 </section>
@@ -280,7 +268,6 @@
 <footer>
   <div class="wrap">
     <span>Show Up Santa Barbara — a community project, founded by lived experience.</span>
-    <span>Not a law firm · Not a treatment provider · Just the hub.</span>
   </div>
 </footer>
 
