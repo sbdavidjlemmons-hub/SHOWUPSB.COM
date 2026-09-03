@@ -78,6 +78,8 @@
     .p-ink h1 .glow{animation:glow 3.6s ease-in-out infinite}
     .p-ink h1.live .ltr{opacity:0;transform:translateY(.42em) rotateX(-78deg);transform-origin:50% 100%;transition:opacity .3s ease,transform .55s cubic-bezier(.22,.9,.28,1)}
     .p-ink h1.live .ltr.in{opacity:1;transform:none}
+    .p-ink h1.live .ltr.out{opacity:0;transform:translateY(-.55em);transition:opacity .55s ease,transform .7s ease-in}
+    .p-ink h1.live .ltr.reset{transition:none}
     .p-ink h1.buzz{animation:buzz .16s ease-in-out}
     @keyframes buzz{0%,100%{translate:0 0}25%{translate:-1.2px .6px}50%{translate:1.2px -.6px}75%{translate:-.8px -.5px}}
     @keyframes float-a{0%,100%{transform:translateY(0) rotate(-.25deg)}50%{transform:translateY(-7px) rotate(.15deg)}}
@@ -286,8 +288,14 @@
   });
   h.classList.add('live');
   function rollOut(done){
-    letters.forEach(function(s,k){ setTimeout(function(){ s.classList.remove('in'); }, k*26); });
-    setTimeout(done, letters.length*26+380);
+    // rise and dissolve, one letter after the next; then snap back below the baseline, unseen
+    letters.forEach(function(s,k){ setTimeout(function(){ s.classList.remove('in'); s.classList.add('out'); }, k*24); });
+    setTimeout(function(){
+      letters.forEach(function(s){ s.classList.add('reset'); s.classList.remove('out'); });
+      void h.offsetWidth;
+      letters.forEach(function(s){ s.classList.remove('reset'); });
+      setTimeout(done, 200);
+    }, letters.length*24+760);
   }
   function rollIn(){
     var i=0;
