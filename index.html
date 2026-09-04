@@ -122,6 +122,13 @@
   .three p{color:#AFC4BC;font-size:20px}
   .fix .kicker{margin-top:48px;font-style:italic;font-size:clamp(24px,2.9vw,34px);color:#F0E3C8;max-width:28em}
 
+  /* ---------- FOUNDER'S NOTE ---------- */
+  .note{padding:96px 0 90px;background:var(--foam)}
+  .note .label{color:var(--teal)}
+  .note blockquote{margin:18px 0 0;border-left:10px solid var(--marigold);padding:6px 0 6px 30px;max-width:28em}
+  .note p{font-size:clamp(25px,3.1vw,38px);line-height:1.32;font-weight:500}
+  .note p + p{margin-top:20px}
+
   /* ---------- OPEN / BOARD / MONEY ---------- */
   .open{padding:96px 0 88px}
   .open h2{font-size:clamp(38px,5.4vw,62px);font-weight:800;max-width:14em}
@@ -154,6 +161,11 @@
   .launch h2{font-size:clamp(38px,6vw,70px);font-weight:800;margin:18px auto 22px;max-width:14em}
   .launch p{max-width:32em;margin:0 auto 36px;color:var(--mute);font-size:1.1em}
   .launch .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;text-align:left;margin:0 0 36px}
+  .role{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px 22px;display:flex;flex-direction:column;gap:6px}
+  .role b{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:23px}
+  .role span{color:var(--mute);font-size:19px}
+  .launch .do{font-style:italic;font-size:clamp(24px,3vw,36px);color:var(--marigold-ink);margin:0 auto 30px;max-width:20em}
   footer{border-top:1px solid var(--line);padding:30px 0 52px;color:var(--mute);font-size:18px}
   footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   footer a{color:var(--mute)}
@@ -195,7 +207,7 @@
       <div class="engine"><span class="label">The Directory</span><h3>Every service, one page</h3><p>Housing, recovery, reentry, food, mental health, vocational — every provider in the county, linked directly, kept current.</p></div>
       <div class="engine"><span class="label">The Board</span><h3>Sober life, posted daily</h3><p>Beach walks, hikes, coffee, game nights. Small groups, no pressure, nothing clinical. Post in under a minute. Come alone — that's normal here.</p></div>
       <div class="engine"><span class="label">The Pipeline</span><h3>Your story is a career</h3><p>California pays certified Peer Support Specialists through Medi-Cal. If you made it through the system, you're qualified to pull the next person through. We map the path and who's hiring.</p></div>
-      <div class="engine"><span class="label">Street Outreach</span><h3>Weekly, on foot</h3><p>Clean clothes, sized on the spot, handed over right there. The front door for people who won't walk through one.</p></div>
+      <div class="engine"><span class="label">Night Outreach</span><h3>One on one, from the heart</h3><p>We go out at night to the people on the street who don't normally talk to anyone — and to the most vulnerable — one person at a time. Non-offensive. No agenda. Done from the heart. Clean clothes, sized on the spot, handed over right there.</p></div>
       <div class="engine"><span class="label">The Hiring Bridge</span><h3>Local jobs for people coming home</h3><p>Local businesses hiring men and women out of reentry and recovery, with mentorship attached so the job sticks.</p></div>
       <div class="engine"><span class="label">Recognition</span><h3>The ones who show up, named</h3><p>Public recognition — every year — for the providers, businesses, and individuals this community says showed up. Praise in public. Concerns handled privately, and acted on.</p></div>
     </div>
@@ -216,6 +228,17 @@
   </div>
 </section>
 
+<section class="note">
+  <div class="wrap">
+    <div class="label">From the founder</div>
+    <blockquote>
+      <p>I know where a lot of changes need to be made, and a lot of people need to step up to the plate.</p>
+      <p>I am all about support, and all about accountability. But most of all I am about the people — this community.</p>
+      <p>If we are being offered a fair shake, we use that opportunity to the best of our ability, as a community. We do something about it. We don't talk about it.</p>
+    </blockquote>
+  </div>
+</section>
+
 <section class="open" id="open">
   <div class="wrap">
     <h2>Built in the open, from day one.</h2>
@@ -230,8 +253,8 @@
       <div class="seat"><b>Donations</b><span>Goods in, as a cooperative — so providers don't spend funds buying what the community can give</span></div>
     </div>
     <div class="money">
-      <h3>Not one dollar goes to the founder.</h3>
-      <p>Public accounting, posted. Every dollar itemized. The founder serves as an unpaid advisor and will not touch the money — not one dollar. The gift is the work, not the wallet.</p>
+      <h3>Public accounting, posted. Every dollar itemized.</h3>
+      <p>A founder on payroll does not sit on the board. Advisory position only — and it can be removed at any point, by the board or by the community, if he is no longer a good fit. Once you hear the story you will understand: he will never quit on this community. But the community holds the door.</p>
     </div>
   </div>
 </section>
@@ -254,13 +277,21 @@
   </div>
 </section>
 
-<section class="launch">
+<section class="launch" id="stepup">
   <div class="wrap">
-    <div class="label">Founding Partners</div>
-    <h2>The first ones at the table help set the standard.</h2>
-    <p>Providers, businesses, and neighbors: claim your place, be recognized at the public launch, and help build the one hub this county has been missing.</p>
+    <div class="label">We are calling for</div>
+    <h2>The community steps up too.</h2>
+    <p>This is a flagship community, and we are uniting. So the ask goes both ways. We are calling for:</p>
+    <div class="roles">
+      <div class="role"><b>Community worship leaders</b><span>A position, not a volunteer slot.</span></div>
+      <div class="role"><b>A donations team</b><span>Seeking donations in bulk for every local provider — so goods land here, not in a budget line.</span></div>
+      <div class="role"><b>A marketing team</b><span>Get the name out. Show what a flagship community looks like when it unites.</span></div>
+      <div class="role"><b>Night outreach</b><span>One on one, from the heart, for the people nobody talks to.</span></div>
+      <div class="role"><b>Founding partners</b><span>Providers, businesses, and neighbors already doing this right. Claim your place and help set the standard.</span></div>
+    </div>
+    <p class="do">We do something about it. We don't talk about it.</p>
     <div class="row">
-      <a class="btn btn-sun" href="mailto:sb.david.j.lemmons@gmail.com?subject=Show%20Up%20SB%20%E2%80%94%20Founding%20Partner">Become a founding partner</a>
+      <a class="btn btn-sun" href="mailto:sb.david.j.lemmons@gmail.com?subject=Show%20Up%20SB%20%E2%80%94%20I%27m%20stepping%20up">Step up</a>
     </div>
   </div>
 </section>
