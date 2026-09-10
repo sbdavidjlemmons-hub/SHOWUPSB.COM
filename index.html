@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#153f46">
-  <meta name="description" content="Show Up SB connects Santa Barbara voices, providers, resources, and practical solutions—then follows through.">
+  <meta name="description" content="Show Up SB names where Santa Barbara systems are failing, rebuilds operating procedures, and tracks whether follow-through improves.">
   <link rel="canonical" href="https://www.showupsb.com/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Show Up SB — You Found Us & You Do Matter">
@@ -230,6 +230,17 @@
     .needs { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 30px; }
     .need { padding: 8px 12px; border: 1px solid rgba(255,255,255,.23); border-radius: 999px; color: rgba(255,255,255,.82); font: 650 .78rem "Public Sans", sans-serif; }
 
+    /* Operating reset */
+    .operating-reset { background: #fff1e7; border-top: 5px solid var(--clay); border-bottom: 1px solid rgba(168, 78, 50, .2); }
+    .reset-shell { display: grid; grid-template-columns: .86fr 1.14fr; gap: 24px; align-items: stretch; }
+    .reset-lead { padding: clamp(30px, 5vw, 58px); border-radius: 28px; background: var(--clay); color: white; }
+    .reset-lead h2 { max-width: 10ch; margin-bottom: 20px; color: white; }
+    .reset-lead p { color: rgba(255,255,255,.86); font-size: 1.15rem; }
+    .reset-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .reset-card { padding: 24px; border: 1px solid rgba(168,78,50,.2); border-radius: 18px; background: white; }
+    .reset-card strong { display: block; margin-bottom: 8px; color: var(--clay); font: 800 1.15rem/1.1 "Bricolage Grotesque", sans-serif; }
+    .reset-card p { margin: 0; color: var(--muted); font-size: .98rem; line-height: 1.4; }
+
     /* Accountability */
     .accountability { background: var(--paper); }
     .funding-shell { display: grid; grid-template-columns: .75fr 1.25fr; gap: 22px; }
@@ -385,6 +396,9 @@
       .nav-inner { min-height: 64px; }
       .nav-links .button { display: none; }
       .current-status .wrap { display: block; padding-block: 10px; }
+      .reset-shell { grid-template-columns: 1fr; }
+      .reset-grid { grid-template-columns: 1fr 1fr; }
+
       .current-status span { display: block; }
       .current-status span:not(:last-child)::after { content: ""; margin: 0; }
       .router { padding-bottom: 50px; }
@@ -446,7 +460,7 @@
   </section>
 
   <aside class="current-status" aria-label="Current project status">
-    <div class="wrap"><span>Founder-led</span><span>Organizing</span><span>Private concern intake not yet open</span><span>No money or public drop-offs accepted</span></div>
+    <div class="wrap"><span>Founder-led</span><span>Organizing</span><span>THE CURRENT SYSTEM IS NOT WORKING WELL ENOUGH</span><span>Private concern intake not yet open</span><span>No money or public drop-offs accepted</span></div>
   </aside>
 
   <main id="main">
