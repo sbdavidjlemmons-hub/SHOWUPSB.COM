@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#153f46">
   <meta name="description" content="Show Up SB connects Santa Barbara voices, providers, resources, and practical solutions—then follows through.">
+  <link rel="canonical" href="https://www.showupsb.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Show Up SB — You Found Us & You Do Matter">
+  <meta property="og:description" content="A founder-led Santa Barbara project connecting community voices, resources, providers, and practical solutions.">
+  <meta property="og:url" content="https://www.showupsb.com/">
+  <meta property="og:image" content="https://www.showupsb.com/santa-barbara-bridge.webp">
+  <meta name="twitter:card" content="summary_large_image">
   <title>Show Up SB — You Found Us & You Do Matter</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -249,6 +256,10 @@
     .provider-field { padding: 16px; border-radius: 14px; background: rgba(255,255,255,.07); }
     .provider-field span { display: block; color: rgba(255,255,255,.58); font: 650 .68rem "Public Sans", sans-serif; letter-spacing: .08em; text-transform: uppercase; }
     .provider-field strong { display: block; margin-top: 5px; color: white; font: 650 .9rem "Public Sans", sans-serif; }
+    .research-spotlight { display: grid; grid-template-columns: .86fr 1.14fr; gap: 18px; margin-top: 18px; padding: 24px; border: 1px solid rgba(255,255,255,.15); border-radius: 18px; background: rgba(255,255,255,.06); }
+    .research-spotlight h4 { margin: 0 0 8px; color: white; font: 750 1.25rem/1.1 "Bricolage Grotesque", sans-serif; }
+    .research-spotlight p { margin: 0; font-size: .94rem; }
+    .research-spotlight .button { align-self: center; justify-self: end; }
 
     /* Ideas */
     .ideas { background: #f4eee3; }
@@ -355,6 +366,8 @@
       .flow-step { min-height: auto; }
       .flow-step:not(:last-child)::after { content: "↓"; left: 50%; right: auto; top: auto; bottom: -13px; transform: translateX(-50%); }
       .provider-result { grid-template-columns: 1fr 1fr; }
+      .research-spotlight { grid-template-columns: 1fr; }
+      .research-spotlight .button { justify-self: start; }
     }
     @media (max-width: 680px) {
       body { font-size: 17px; padding-bottom: 68px; }
@@ -459,7 +472,7 @@
         <div class="priority-shell">
           <article class="priority-main">
             <h2>Keep good things working here.</h2>
-            <p class="lead">The Donation Station will organize quality clothing, furniture, household goods, outreach packs, transportation, and provider requests—so useful donations reach Santa Barbara neighbors instead of disappearing into an unknown stream.</p>
+            <p class="lead">The proposed Donation Station would organize quality clothing, furniture, household goods, outreach packs, transportation, and provider requests—so useful donations can reach Santa Barbara neighbors through an authorized local operator.</p>
             <div class="needs" aria-label="Donation Station needs">
               <span class="need">Fiscal sponsor</span><span class="need">Space</span><span class="need">Vehicles</span><span class="need">Provider partners</span><span class="need">Sorting team</span><span class="need">Board builders</span>
             </div>
@@ -484,14 +497,14 @@
     <section class="section accountability" id="accountability">
       <div class="wrap">
         <div class="section-head">
-          <div><p class="eyebrow">Follow the public dollar</p><h2>Known. Reported. Needs proof.</h2></div>
+          <div><p class="eyebrow">Follow the public dollar</p><h2>Award. Contract. Result. Open question.</h2></div>
           <p>We will show what the records support, identify what remains unclear, invite documented corrections, and update the record openly.</p>
         </div>
         <div class="funding-shell">
           <article class="funding-total">
             <span class="eyebrow light">Proposition 47</span>
             <strong>≈$20M</strong>
-            <p>Awarded to Santa Barbara County since 2019 across three funded cohorts. Awarded does not mean fully spent.</p>
+            <p>Approximate award authority to Santa Barbara County since 2019 across Cohorts 2, 3, and 5. Award authority is not the same as money spent.</p>
           </article>
           <article class="funding-flow">
             <h3>The funding river</h3>
@@ -502,31 +515,40 @@
               <div class="flow-step">Service delivered</div>
               <div class="flow-step">Result and gap</div>
             </div>
-            <div class="truth-key"><span class="truth">Known</span><span class="truth reported">Reported</span><span class="truth proof">Needs proof</span></div>
-            <p style="margin:18px 0 0;color:var(--muted);font-size:.92rem">No substantiated duplicate-billing finding was identified in the public record reviewed. The available records do not permit a complete transaction-level test.</p>
+            <div class="truth-key"><span class="truth">Official-source fact</span><span class="truth reported">Agency/provider reported</span><span class="truth proof">Not yet verified</span></div>
+            <p style="margin:18px 0 0;color:var(--muted);font-size:.92rem">Cohort 2 statewide reporting lists approximately $5.805 million spent. Comparable final expenditure totals for Cohorts 3 and 5 were not located. No substantiated duplicate-billing finding was identified in the reviewed public record; those records also do not permit a complete transaction-level test.</p>
           </article>
         </div>
 
         <section class="registry" aria-labelledby="provider-title">
           <div class="registry-top">
-            <div><p class="eyebrow light">Evidence registry · expanding</p><h3 id="provider-title">Who is named in the Prop 47 record?</h3><p>This is a role-based funding registry—not yet a complete county service directory.</p></div>
+            <div><p class="eyebrow light">Evidence registry · expanding</p><h3 id="provider-title">Who appears in the public funding record?</h3><p>This is a dated funding registry—not proof of current service availability, payment, or endorsement.</p></div>
             <div>
               <label for="provider-select">Choose an organization</label>
               <select id="provider-select" data-track="provider_select">
-                <option value="goodsam">Good Samaritan Shelter</option>
-                <option value="fsa">Family Service Agency of Santa Barbara County</option>
-                <option value="bwell">County Behavioral Wellness / Behavioral Health</option>
-                <option value="pd">County Public Defender</option>
-                <option value="sheriff">Santa Barbara County Sheriff’s Office</option>
-                <option value="da">Santa Barbara County District Attorney</option>
-                <option value="rda">Resource Development Associates</option>
-                <option value="ucsb">UC Santa Barbara / The Regents</option>
-                <option value="cada">Council on Alcoholism and Drug Abuse</option>
-                <option value="tarzana">Tarzana Treatment Centers</option>
+                <optgroup label="Proposition 47 records">
+                  <option value="goodsam">Good Samaritan Shelter</option>
+                  <option value="fsa">Family Service Agency of Santa Barbara County</option>
+                  <option value="bwell">County Behavioral Wellness / Behavioral Health</option>
+                  <option value="pd">County Public Defender</option>
+                  <option value="sheriff">Santa Barbara County Sheriff’s Office</option>
+                  <option value="da">Santa Barbara County District Attorney</option>
+                  <option value="rda">Resource Development Associates</option>
+                  <option value="ucsb">UC Santa Barbara / The Regents</option>
+                  <option value="cada">Council on Alcoholism and Drug Abuse</option>
+                  <option value="tarzana">Tarzana Treatment Centers</option>
+                </optgroup>
+                <optgroup label="Other verified County contracts">
+                  <option value="stalwart">Stalwart Recovery / Stalwart Clean &amp; Sober, Inc.</option>
+                </optgroup>
               </select>
             </div>
           </div>
-              <div class="provider-result" id="provider-result" aria-live="polite"></div>
+          <div class="provider-result" id="provider-result" aria-live="polite"></div>
+          <div class="research-spotlight" id="stalwart-spotlight" hidden>
+            <div><h4>Stalwart Recovery: contract and outcome review</h4><p>Three independent research lanes reviewed funding, services, outcomes, governance, oversight, and unresolved records. The public brief separates contract ceilings from cash paid and structural risk from proven misconduct.</p></div>
+            <a class="button secondary" href="stalwart-recovery.html" data-track="stalwart_research">Open the sourced deep dive</a>
+          </div>
         </section>
         <p style="margin:18px 0 0"><a class="button text" href="https://www.bscc.ca.gov/s_bsccprop47/" rel="noopener" target="_blank" data-track="prop47_source">Open the official BSCC records</a></p>
       </div>
@@ -550,7 +572,7 @@
           <article class="idea-card"><div class="idea-top"><span class="idea-number">09</span><span class="status build">Governance required</span></div><h3>Accountability & Solutions</h3><p>Private repair, provider response, documented corrections, and public totals.</p><button class="open-idea" data-idea="accountability" data-track="secure_route_opened">Open idea →</button></article>
         </div>
         <details class="more-ideas">
-          <summary class="button line" data-track="ideas_show_all">Show all nine additional ideas</summary>
+          <summary class="button line" data-track="ideas_show_all">Show all ten additional ideas</summary>
           <div class="idea-grid">
             <article class="idea-card"><div class="idea-top"><span class="idea-number">10</span><span class="status build">Partner needed</span></div><h3>Work & Learning Bridge</h3><p>Local hiring, education, benefits navigation, and mentorship that helps work stick.</p><button class="open-idea" data-idea="work" data-track="idea_work">Open idea →</button></article>
             <article class="idea-card"><div class="idea-top"><span class="idea-number">11</span><span class="status build">Safeguarding co-design</span></div><h3>Family & Teen Bridge</h3><p>Support reconnection while protecting children, parents, and family choice.</p><button class="open-idea" data-idea="family" data-track="idea_family">Open idea →</button></article>
@@ -559,8 +581,9 @@
             <article class="idea-card"><div class="idea-top"><span class="idea-number">14</span><span class="status long">Feasibility</span></div><h3>Reentry Campus</h3><p>Explore program improvements at the active Calle Real custody campus—not a fictional vacant farm.</p><button class="open-idea" data-idea="campus" data-track="idea_campus">Open idea →</button></article>
             <article class="idea-card"><div class="idea-top"><span class="idea-number">15</span><span class="status long">Privacy + legal design</span></div><h3>Shared Referral Status</h3><p>Consent-based handoff status without exposing private health or recovery details.</p><button class="open-idea" data-idea="referral" data-track="idea_referral">Open idea →</button></article>
             <article class="idea-card"><div class="idea-top"><span class="idea-number">16</span><span class="status build">Concept</span></div><h3>Nonprofit Fleet Alliance</h3><p>Pool buying power and hand down safe vehicles under transparent rules.</p><button class="open-idea" data-idea="fleet" data-track="idea_fleet">Open idea →</button></article>
-            <article class="idea-card"><div class="idea-top"><span class="idea-number">17</span><span class="status long">Long-term concept</span></div><h3>Housing & Community Hub</h3><p>A partner-led physical home for connection, navigation, learning, and practical help.</p><button class="open-idea" data-idea="housing" data-track="idea_housing">Open idea →</button></article>
-            <article class="idea-card"><div class="idea-top"><span class="idea-number">18</span><span class="status build">Researching</span></div><h3>Funding Transparency</h3><p>Map public funding, providers, reported services, outcomes, and unresolved questions.</p><button class="open-idea" data-idea="funding" data-track="idea_funding">Open idea →</button></article>
+            <article class="idea-card"><div class="idea-top"><span class="idea-number">17</span><span class="status build">Concept</span></div><h3>Volunteer Action Days</h3><p>Turn community goodwill into safe, useful projects led by authorized partners.</p><button class="open-idea" data-idea="volunteer" data-track="idea_volunteer">Open idea →</button></article>
+            <article class="idea-card"><div class="idea-top"><span class="idea-number">18</span><span class="status long">Long-term concept</span></div><h3>Housing & Community Hub</h3><p>A partner-led physical home for connection, navigation, learning, and practical help.</p><button class="open-idea" data-idea="housing" data-track="idea_housing">Open idea →</button></article>
+            <article class="idea-card"><div class="idea-top"><span class="idea-number">19</span><span class="status build">Researching</span></div><h3>Funding Transparency</h3><p>Map public funding, providers, reported services, outcomes, and unresolved questions.</p><button class="open-idea" data-idea="funding" data-track="idea_funding">Open idea →</button></article>
           </div>
         </details>
       </div>
@@ -583,7 +606,7 @@
             <span class="eyebrow light">Share a concern</span>
             <h3>Tell us where it broke.</h3>
             <p>The protected intake system is being established before private stories are accepted. Until safeguards and human review are active, use verified crisis resources below or send only a general, non-sensitive question.</p>
-            <a class="button secondary" href="mailto:sb.david.j.lemmons@gmail.com?subject=SHOW%20UP%20SB%20%E2%80%94%20General%20question&body=Please%20do%20not%20include%20medical%2C%20substance-use%2C%20legal%2C%20or%20other%20sensitive%20personal%20details%20in%20email.%20My%20general%20question%3A%20" data-track="concern_general">Ask a General Question</a>
+            <a class="button secondary" href="mailto:sb.david.j.lemmons@gmail.com?subject=SHOW%20UP%20SB%20%E2%80%94%20General%20question&body=Please%20do%20not%20include%20medical%2C%20substance-use%2C%20legal%2C%20or%20other%20sensitive%20personal%20details%20in%20email.%20My%20general%20question%3A%20" data-track="secure_route_opened">Ask a General Question</a>
           </article>
         </div>
         <p class="safety-note">“Private” means information will not be posted publicly; it does not create legal privilege or guarantee absolute confidentiality. Show Up SB is not an emergency, medical, legal, or crisis service. If there is immediate danger, call 911. For mental-health or suicide crisis support, call or text 988. For local health and human-service navigation, dial 211.</p>
@@ -597,9 +620,9 @@
           <p>Show Up SB is building warmer handoffs. Today, these established services are the fastest starting points.</p>
         </div>
         <div class="metric-grid">
-          <article class="metric"><strong>211</strong><p>Local health, housing, food, and human-service navigation.</p><a class="button text" href="tel:211" data-track="resource_211">Call 211</a></article>
-          <article class="metric"><strong>988</strong><p>Mental-health and suicide crisis support by call or text.</p><a class="button text" href="tel:988" data-track="resource_988">Call 988</a></article>
-          <article class="metric"><strong>911</strong><p>Immediate danger or a life-threatening emergency.</p><a class="button text" href="tel:911" data-track="resource_911">Call 911</a></article>
+          <article class="metric"><strong>211</strong><p>Local health, housing, food, and human-service navigation.</p><a class="button text" href="tel:211" data-track="secure_route_opened">Call 211</a></article>
+          <article class="metric"><strong>988</strong><p>Mental-health and suicide crisis support by call or text.</p><a class="button text" href="tel:988" data-track="secure_route_opened">Call 988</a></article>
+          <article class="metric"><strong>911</strong><p>Immediate danger or a life-threatening emergency.</p><a class="button text" href="tel:911" data-track="secure_route_opened">Call 911</a></article>
           <article class="metric"><strong>Open</strong><p>Provider directory and verified warm-handoff network are being built now.</p><a class="button text" href="mailto:sb.david.j.lemmons@gmail.com?subject=SHOW%20UP%20SB%20%E2%80%94%20Provider%20directory" data-track="directory_contribute">Add a Resource</a></article>
         </div>
         <section class="build-team" id="team">
@@ -648,7 +671,7 @@
   </footer>
 
   <div class="mobile-actions" aria-label="Quick actions">
-    <a class="button primary" href="#help" data-track="mobile_help">I Need Help</a>
+    <a class="button primary" href="#help" data-track="secure_route_opened">I Need Help</a>
     <a class="button secondary" href="#paths" data-track="mobile_action">Take Action</a>
   </div>
 
@@ -697,25 +720,28 @@
       rda: ["Evaluator", "Executed contract ceiling", "Cohort 2", "Evaluation role—not a direct-service provider"],
       ucsb: ["Evaluator", "Executed contract ceiling", "Cohorts 3 and 5", "Evaluation role—not a direct-service provider"],
       cada: ["Approved/planned provider", "Pooled approved C5 budget", "Cohort 5", "Organization-specific contract and payment not publicly verified"],
-      tarzana: ["Approved/planned provider", "Pooled approved C5 budget", "Cohort 5", "Organization-specific contract and payment not publicly verified"]
+      tarzana: ["Approved/planned provider", "Pooled approved C5 budget", "Cohort 5", "Organization-specific contract and payment not publicly verified"],
+      stalwart: ["County-funded recovery-residence provider", "BWell ceiling $1,089,850 (2024–27); Probation ceiling $84,500 (FY2026–27)", "22 BWell beds available; County reported 93 clients and 64% successful discharge in FY2024–25", "Ceilings are not cash paid; overlapping beds cannot be added; no direct CenCal/CalAIM payment or substantiated duplicate billing finding located"]
     };
     var fields = ["Role", "Money basis", "Program period", "Limitation"];
     var select = document.getElementById("provider-select");
     var result = document.getElementById("provider-result");
+    var stalwartSpotlight = document.getElementById("stalwart-spotlight");
     function showProvider() {
       var data = providers[select.value];
       result.innerHTML = data.map(function (value, index) { return '<div class="provider-field"><span>' + fields[index] + '</span><strong>' + value + '</strong></div>'; }).join("");
+      stalwartSpotlight.hidden = select.value !== "stalwart";
     }
     select.addEventListener("change", function () { showProvider(); trackPublicEvent("provider_change", { provider_key: select.value }); });
     showProvider();
 
     var ideas = {
-      donation: ["Ready now", "Build a local system that matches useful goods with verified needs.", "Secure a qualified nonprofit or fiscal sponsor and a temporary site.", "Space, vehicles, inventory discipline and three provider partners.", "No cash collection until a qualified entity and public controls are in place.", "Goods are tracked from intake to verified local distribution."],
-      voice: ["Ready now", "Give every community member a clear path to acknowledgment and a next step.", "Open a low-risk public feedback route before sensitive intake.", "Human review, response standards and safe escalation procedures.", "People may withhold their name; sensitive intake remains free of advertising trackers.", "Every submission receives acknowledgment and a visible status."],
-      recognition: ["Ready now", "Make effective service visible and repeatable.", "Launch moderated shout-outs with permission before publication.", "Community nominations, provider confirmation and editorial review.", "No private client information or unverified claims are published.", "Useful practices are recognized and copied across the county."],
-      directory: ["Ready now", "Organize services around a resident’s need instead of agency structure.", "Build the verified provider registry with dates, eligibility and capacity.", "Providers willing to maintain accurate information.", "Every entry is dated, sourced and easy to correct.", "People reach the right door with fewer failed handoffs."],
-      outreach: ["Pilot ready", "Meet isolated neighbors with dignity, practical supplies and conversation.", "Co-design a small pilot with an established outreach provider.", "Trained pairs, supplies, safety protocol and referral partners.", "No exploitative photography, coercion, or unsupported clinical work.", "Contacts, accepted help and completed handoffs are tracked privately."],
-      sober: ["Pilot ready", "Create belonging that is social, local and low pressure.", "Publish the first provider-supported activity calendar.", "Hosts, accessible venues and clear community conduct.", "Activities complement—not replace—treatment and recovery support.", "People return, connect and voluntarily reach further support."],
+      donation: ["Organizing", "Build a local system that matches useful goods with verified needs.", "Secure a qualified nonprofit or fiscal sponsor and a temporary site.", "Space, vehicles, inventory discipline and three provider partners.", "No cash or public drop-offs until a qualified entity and public controls are in place.", "Goods are tracked from intake to verified local distribution."],
+      voice: ["Intake not open", "Build a community path for acknowledgment and appropriate next steps.", "Establish staffing, privacy, governance and safe escalation before sensitive intake.", "Human review, response standards and a tracker-free private route.", "No promise of anonymity or resolution before the protected system exists.", "A tested, clearly disclosed intake process opens with trained review."],
+      recognition: ["Moderation design", "Make effective service visible and repeatable.", "Adopt permission, verification and moderation standards before publication.", "Community nominations, provider confirmation and editorial review.", "No private client information or unverified claims are published.", "Useful practices can be recognized with informed permission."],
+      directory: ["Directory not live", "Organize services around a resident’s need instead of agency structure.", "Build the verified provider registry with dates, eligibility and capacity.", "Providers willing to maintain accurate information.", "Every entry is dated, sourced and easy to correct.", "People reach the right door with fewer failed handoffs."],
+      outreach: ["Concept", "Meet isolated neighbors with dignity, practical supplies and conversation.", "Co-design a small pilot with an established outreach provider.", "Trained pairs, supplies, safety protocol, insurance and referral partners.", "No exploitative photography, coercion, or unsupported clinical work.", "An authorized pilot measures contacts, accepted help and completed handoffs."],
+      sober: ["Concept", "Create belonging that is social, local and low pressure.", "Define the program with an established recovery-support provider.", "Hosts, accessible venues and clear community conduct.", "Activities complement—not replace—treatment and recovery support.", "An authorized program measures voluntary attendance and connection."],
       peer: ["Partners needed", "Turn lived experience into recognized service and paid work.", "Map certification, supervision and eligible employer pathways.", "Certified supervisors, eligible providers and workforce partners.", "Never promise Medi-Cal payment without service and provider eligibility.", "More qualified peers move into sustainable local roles."],
       reentry: ["Public partners needed", "Begin the return home before release and stay through the handoff.", "Convene custody, probation, health, workforce and lived-experience leaders.", "Public authority, service partners and participant consent.", "Participation rights and independent oversight are designed first.", "Identity, care, housing and work connections survive release."],
       accountability: ["Building governance", "Turn concerns into fair review, repair and measurable improvement.", "Adopt intake, response, correction, appeal and publication rules.", "Independent reviewers, provider participation and privacy controls.", "Unverified person-plus-allegation posts never become public content.", "Verified patterns lead to documented fixes and public totals."],
@@ -726,8 +752,9 @@
       campus: ["Feasibility required", "Explore a dignity-centered reentry program at the active Calle Real custody campus.", "Commission a program, authority, facility and operating feasibility study.", "Sheriff, County, labor, safety, counsel and lived-experience partners.", "Do not describe the historic Honor Farm as vacant or available.", "A lawful pilot is independently evaluated before expansion."],
       referral: ["Privacy design required", "Let residents and partners see whether a handoff moved without exposing private details.", "Define the minimum status data and consent model.", "Privacy counsel, eligible providers and secure infrastructure.", "Access is role-limited, consent-based and fully logged.", "Fewer referrals disappear between organizations."],
       fleet: ["Coalition required", "Use combined purchasing power to lower nonprofit transportation costs.", "Survey qualified nonprofits and fleet needs.", "Insurers, dealers, nonprofits and transparent transfer rules.", "Restricted grants remain separate and conflicts are published.", "More reliable vehicles reach verified service organizations."],
+      volunteer: ["Concept", "Turn community energy into useful, visible work without creating unsafe or duplicative projects.", "Ask established nonprofits which one-day projects they can authorize and supervise.", "Qualified operators, insurance, safety plans, tools and clear volunteer roles.", "No unsupervised work with vulnerable people or replacement of paid staff.", "Partners complete practical projects and report what changed."],
       housing: ["Long-term / partner-led", "Create a physical home for navigation, connection, learning and practical support.", "Define the services before searching for a building.", "Operating partners, capital, governance and neighborhood dialogue.", "No property promise before feasibility, authority and funding.", "A sustainable hub strengthens—not duplicates—existing providers."],
-      funding: ["Researching", "Show how public funds move, what providers report and what remains unverifiable.", "Publish the Prop 47 map and send targeted records requests.", "Contracts, invoices, outcome reports and documented corrections.", "Known facts, reported claims and missing proof remain visibly separate.", "Residents can follow dollars to services and verified outcomes."]
+      funding: ["Researching", "Show how public funds move, what providers report and what remains unverifiable.", "Publish sourced funding records and send targeted records requests.", "Contracts, invoices, outcome reports and documented corrections.", "Award, contract ceiling, payment, and reported outcome remain visibly separate.", "Residents can follow public records without mistaking estimates for facts."]
     };
     var dialog = document.getElementById("idea-dialog");
     var dialogTitle = document.getElementById("dialog-title");

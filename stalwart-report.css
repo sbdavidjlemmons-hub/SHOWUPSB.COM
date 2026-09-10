@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@500;600;700&display=swap');
+
+:root{--deep:#0a2830;--night:#12383f;--teal:#1e6971;--sun:#f2ae4f;--clay:#a84e32;--paper:#fffdf8;--sand:#efe4d2;--ink:#15383d;--muted:#5d716e;--line:rgba(21,56,61,.16)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--paper)}
+body{margin:0 auto;padding:0 0 70px;max-width:none;background:var(--paper);color:var(--ink);font:18px/1.58 "Newsreader",Georgia,serif}
+body>nav,body>header,body>h1,body>h2,body>h3,body>p,body>ul,body>ol,body>table,body>blockquote,body>hr{width:min(1100px,calc(100% - 40px));margin-left:auto;margin-right:auto}
+a{color:var(--teal);text-underline-offset:3px}
+h1,h2,h3,nav,th{font-family:"Bricolage Grotesque","Arial Black",sans-serif}
+h1,h2,h3{line-height:1.04;text-wrap:balance}
+h1{width:100%!important;max-width:none;margin:0!important;padding:150px max(20px,calc((100vw - 1100px)/2)) 68px;background:linear-gradient(90deg,rgba(10,40,48,.96),rgba(10,40,48,.68)),url("santa-barbara-bridge.webp") center 43%/cover;color:white;font-size:clamp(3rem,7vw,7rem);letter-spacing:-.06em}
+h2{margin-top:72px;font-size:clamp(2rem,4vw,3.6rem);letter-spacing:-.045em}
+h3{margin-top:46px;font-size:1.5rem}
+p,li{max-width:76ch}
+strong{color:#12383f}
+nav.showup-nav{position:absolute;z-index:2;top:0;left:0;right:0;width:min(1100px,calc(100% - 40px));padding:28px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;color:white;font-family:"Bricolage Grotesque",sans-serif}
+nav.showup-nav a{color:white;text-decoration:none;font-weight:800}
+nav.showup-nav span{color:var(--sun)}
+.review-strip{width:100%!important;max-width:none!important;margin:0!important;padding:13px max(20px,calc((100vw - 1100px)/2));background:#ffd08d;color:#3a270b;font:750 .76rem/1.45 "Public Sans",sans-serif;text-align:center}
+.lead{margin-top:40px!important;padding:26px 28px;border-left:8px solid var(--sun);background:var(--sand);font-size:1.16rem}
+table{display:table;width:min(1100px,calc(100% - 40px));margin-top:28px;margin-bottom:38px;border-collapse:separate;border-spacing:0;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:white;font-family:"Public Sans",sans-serif;font-size:.83rem}
+thead{background:#f2eadf;color:var(--teal)}
+th,td{padding:15px 14px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-size:.7rem;letter-spacing:.045em;text-transform:uppercase}
+tr:last-child td{border-bottom:0}th:last-child,td:last-child{border-right:0}
+blockquote{margin-top:28px!important;margin-bottom:28px!important;padding:20px 24px;border-left:7px solid var(--sun);background:#fff3df;color:#64491b}
+hr{margin-top:60px!important;border:0;border-top:1px solid var(--line)}
+body>ol,body>ul{padding-left:28px}
+li+li{margin-top:8px}
+code{padding:2px 5px;border-radius:5px;background:#efe9df}
+.research-note{margin-top:50px!important;padding:28px!important;border-radius:20px;background:var(--deep);color:white;font-family:"Public Sans",sans-serif}
+.research-note strong{color:#ffd08d}
+.research-note a{color:#ffd08d}
+.page-footer{width:100%!important;max-width:none!important;margin:70px 0 -70px!important;padding:42px max(20px,calc((100vw - 1100px)/2));background:var(--deep);color:rgba(255,255,255,.7);font:500 .8rem/1.55 "Public Sans",sans-serif}
+@media(max-width:820px){body{font-size:17px}body>nav,body>header,body>h1,body>h2,body>h3,body>p,body>ul,body>ol,body>table,body>blockquote,body>hr{width:min(100% - 28px,1100px)}h1{width:100%!important;padding:125px 14px 52px!important}h2{margin-top:58px}table{display:block;overflow-x:auto;border-radius:14px}nav.showup-nav{width:calc(100% - 28px);padding-top:22px}}
