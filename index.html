@@ -1,321 +1,783 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Show Up Santa Barbara</title>
-<meta name="description" content="Show Up Santa Barbara — one place for this community to be heard, from the highest office to the quietest voice.">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Public+Sans:wght@400;600;700&display=swap">
-<style>
-  :root{
-    --ink:#14383F; --teal:#1D6A73; --marigold:#E8A33D; --sand:#EFE9DC; --foam:#FBF9F4;
-    --card:#FFFFFF; --mute:#5D6F6B; --line:#DCD3C0; --marigold-ink:#8A5A10;
-    --panel-ink:#14383F; --panel-ink-text:#FBF7EC; --panel-sun:#E8A33D; --panel-sun-text:#2A1F08;
-    --chip:#FBF9F4; --chip-text:#14383F;
-    --scrim-a:rgba(20,56,63,.22); --scrim-b:rgba(20,56,63,.88);
-    --hero:url(hero.jpg);
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --ink:#E8EFEA; --teal:#5FB8BE; --marigold:#E8A33D; --sand:#122B30; --foam:#0C1F23;
-      --card:#14313A; --mute:#93A6A0; --line:#25444A; --marigold-ink:#F0BC6B;
-      --panel-ink:#081A1E; --chip:#122B30; --chip-text:#E8EFEA;
-      --scrim-a:rgba(8,26,30,.35); --scrim-b:rgba(8,26,30,.94);
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#153f46">
+  <meta name="description" content="Show Up SB connects Santa Barbara voices, providers, resources, and practical solutions—then follows through.">
+  <link rel="canonical" href="https://www.showupsb.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Show Up SB — You Found Us & You Do Matter">
+  <meta property="og:description" content="A founder-led Santa Barbara project connecting community voices, resources, providers, and practical solutions.">
+  <meta property="og:url" content="https://www.showupsb.com/">
+  <meta property="og:image" content="https://www.showupsb.com/santa-barbara-bridge.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Show Up SB — You Found Us & You Do Matter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --night: #12383f;
+      --deep: #0a2830;
+      --teal: #1e6971;
+      --sea: #6fb0b1;
+      --sun: #f2ae4f;
+      --sun-deep: #bf6c2d;
+      --clay: #a84e32;
+      --cream: #fffaf0;
+      --sand: #efe4d2;
+      --paper: #fffdf8;
+      --ink: #15383d;
+      --muted: #5d716e;
+      --line: rgba(21, 56, 61, .16);
+      --glass: rgba(255, 250, 240, .14);
+      --shadow: 0 28px 80px rgba(7, 31, 37, .24);
+      --radius: 22px;
     }
-  }
-  :root[data-theme="dark"]{
-    --ink:#E8EFEA; --teal:#5FB8BE; --marigold:#E8A33D; --sand:#122B30; --foam:#0C1F23;
-    --card:#14313A; --mute:#93A6A0; --line:#25444A; --marigold-ink:#F0BC6B;
-    --panel-ink:#081A1E; --chip:#122B30; --chip-text:#E8EFEA;
-    --scrim-a:rgba(8,26,30,.35); --scrim-b:rgba(8,26,30,.94);
-  }
-  *{box-sizing:border-box;min-width:0}
-  html{scroll-behavior:smooth}
-  body{margin:0;overflow-x:clip;background:var(--foam);color:var(--ink);font-family:'Newsreader',Georgia,serif;font-size:22px;line-height:1.55}
-  h1,h2,h3{font-family:'Bricolage Grotesque','Arial Black',sans-serif;line-height:1.06;text-wrap:balance;margin:0}
-  p{margin:0}
-  a{color:inherit}
-  .label{font-family:'Public Sans',Arial,sans-serif;font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
-  .wrap{max-width:1240px;margin:0 auto;padding:0 28px}
-  .btn{font-family:'Public Sans',Arial,sans-serif;font-weight:700;font-size:19px;text-decoration:none;padding:18px 28px;border-radius:6px;display:inline-block;transition:transform .15s ease}
-  .btn:hover{transform:translateY(-1px)}
-  .btn:focus-visible,a:focus-visible{outline:3px solid var(--marigold);outline-offset:3px}
-  .btn-sun{background:var(--marigold);color:#2A1F08}
-  .btn-ghost{border:2px solid rgba(255,255,255,.55);color:#F4EFE4}
-  .btn-ink{background:var(--teal);color:#F5FAF6}
 
-  /* ---------- HERO: State Street, looking up ---------- */
-  .hero{position:relative;overflow:hidden;color:#F4EFE4;min-height:min(92vh,880px);display:flex;align-items:flex-end;isolation:isolate}
-  .hero .photo{position:absolute;inset:-12% 0;background:var(--hero) center 38%/cover no-repeat;z-index:-2;will-change:transform}
-  .hero .scrim{position:absolute;inset:0;z-index:-1;
-    background:linear-gradient(180deg,var(--scrim-a) 0%,rgba(20,56,63,.35) 40%,var(--scrim-b) 100%),
-               linear-gradient(90deg,rgba(20,56,63,.7) 0%,rgba(20,56,63,.25) 45%,rgba(20,56,63,0) 70%)}
-  .stage{position:relative;width:100%;max-width:1240px;margin:0 auto;padding:130px 28px 96px;min-height:760px}
-  .panel{position:absolute;border-radius:6px;box-shadow:0 30px 60px -20px rgba(0,0,0,.55)}
-  .p-ink{left:28px;bottom:150px;width:min(860px,calc(100% - 56px));background:transparent;color:var(--panel-ink-text);padding:0;z-index:2;box-shadow:none;border-radius:0}
-  .p-ink .label{color:var(--marigold);margin-bottom:14px;display:block;text-shadow:0 1px 3px rgba(0,0,0,.6)}
-  .p-ink h1{font-size:clamp(58px,10.5vw,148px);font-weight:800;letter-spacing:-.02em;color:#FBF7EC;text-shadow:0 2px 6px rgba(0,0,0,.45),0 10px 30px rgba(0,0,0,.45)}
-  .p-ink h1 .glow{color:var(--marigold);display:inline-block}
-  .p-ink h1#hl{text-wrap:initial}
-  .p-ink{perspective:1000px}
-  .p-ink h1#hl{transform-origin:50% 100%;will-change:transform,opacity;backface-visibility:hidden}
-  .p-ink p{margin-top:22px;font-size:clamp(22px,2.6vw,30px);color:#EEF3EF;max-width:28em;text-shadow:0 1px 3px rgba(0,0,0,.6),0 6px 18px rgba(0,0,0,.4)}
-  .p-chip{top:36px;right:28px;background:var(--chip);color:var(--chip-text);padding:13px 20px;font-family:'Public Sans',Arial,sans-serif;font-weight:700;font-size:16px;letter-spacing:.06em;z-index:4;border-radius:999px;display:flex;gap:10px;align-items:center}
-  .p-chip .dot{width:9px;height:9px;border-radius:50%;background:var(--marigold);display:inline-block}
-  .hero .ctas{position:absolute;left:28px;bottom:60px;display:flex;gap:12px;flex-wrap:wrap;z-index:5}
-  .hero .credit{position:absolute;right:28px;bottom:14px;font-family:'Public Sans',Arial,sans-serif;font-size:13px;color:rgba(244,239,228,.6);z-index:5}
-  .hero .credit a{color:inherit}
-  @media(max-width:820px){
-    .hero{min-height:0;align-items:stretch}
-    .stage{padding:88px 18px 36px;min-height:0;display:flex;flex-direction:column;gap:0}
-    .panel{position:static;left:auto;right:auto;top:auto;bottom:auto;width:100%;max-width:100%}
-    .p-chip{position:absolute;top:26px;left:18px;right:auto;width:auto;max-width:calc(100% - 36px)}
-    .p-ink{padding:0 4px}
-    .p-ink h1{font-size:clamp(50px,14vw,84px)}
-    .p-ink p{max-width:none}
-    .hero .ctas{position:static;margin-top:18px}
-    .hero .credit{position:static;margin-top:12px;align-self:flex-end;text-align:right}
-  }
-  /* kinetic: slow float, staggered; visible at rest */
-  @media (prefers-reduced-motion: no-preference){
-    .p-ink{animation:float-a 8.5s ease-in-out infinite, arrive-l .9s cubic-bezier(.2,.8,.2,1) both}
-    .p-chip{animation:float-c 6.4s ease-in-out infinite 1.1s, arrive-d .8s cubic-bezier(.2,.8,.2,1) .3s both}
-    .p-ink h1 .glow{animation:glow 3.6s ease-in-out infinite}
-    .p-ink h1#hl.live{opacity:0;transform:rotateX(90deg);transition:transform 3.4s cubic-bezier(.2,.75,.2,1),opacity 1.8s ease}
-    .p-ink h1#hl.live.up{opacity:1;transform:rotateX(0deg)}
-    .p-ink h1#hl.live.away{opacity:0;transform:translateY(-.5em);transition:transform .85s ease-in,opacity .6s ease}
-    .p-ink h1#hl.live.reset{transition:none}
-    @keyframes float-a{0%,100%{transform:translateY(0) rotate(-.25deg)}50%{transform:translateY(-7px) rotate(.15deg)}}
-    @keyframes float-b{0%,100%{transform:translateY(0) rotate(.35deg)}50%{transform:translateY(-9px) rotate(-.2deg)}}
-    @keyframes float-c{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-    @keyframes arrive-l{from{translate:-28px 18px}to{translate:0 0}}
-    @keyframes arrive-r{from{translate:28px 22px}to{translate:0 0}}
-    @keyframes arrive-d{from{translate:0 -16px}to{translate:0 0}}
-    @keyframes glow{0%,100%{text-shadow:0 0 0 rgba(232,163,61,0)}50%{text-shadow:0 0 22px rgba(232,163,61,.55),0 0 2px rgba(232,163,61,.9)}}
-  }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Newsreader", Georgia, serif;
+      font-size: 18px;
+      line-height: 1.55;
+    }
+    body.modal-open { overflow: hidden; }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    img { max-width: 100%; display: block; }
+    h1, h2, h3, .nav, .eyebrow, .button, .status, .metric strong, label, select {
+      font-family: "Bricolage Grotesque", "Arial Black", sans-serif;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { line-height: 1.02; text-wrap: balance; }
+    h2 { font-size: clamp(2.35rem, 5.5vw, 4.8rem); letter-spacing: -.045em; }
+    h3 { font-size: 1.42rem; letter-spacing: -.02em; }
+    p { max-width: 65ch; }
+    :focus-visible { outline: 3px solid var(--sun); outline-offset: 4px; }
+    .skip { position: fixed; left: 12px; top: -80px; z-index: 1000; padding: 12px 18px; background: var(--cream); color: var(--ink); border-radius: 10px; }
+    .skip:focus { top: 12px; }
+    .wrap { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
+    .eyebrow { margin-bottom: 14px; color: var(--teal); font-size: .78rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+    .eyebrow.light { color: #ffd08d; }
+    .section { padding: 92px 0; }
+    .section-head { display: grid; grid-template-columns: 1fr minmax(280px, .62fr); align-items: end; gap: 40px; margin-bottom: 42px; }
+    .section-head p { margin-bottom: 5px; color: var(--muted); font-size: 1.15rem; }
 
-  /* ---------- DEDICATION ---------- */
-  .dedic{background:var(--sand);padding:96px 0 88px}
-  .dedic .label{color:var(--teal)}
-  .dedic h2{font-size:clamp(36px,5.4vw,66px);font-weight:800;margin:16px 0 28px;max-width:17em;border-left:10px solid var(--marigold);padding-left:26px}
-  .dedic p{max-width:34em;font-size:clamp(23px,2.6vw,30px);color:var(--ink)}
-  .dedic p + p{margin-top:16px}
-  .dedic em{font-style:italic;color:var(--marigold-ink)}
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 14px 20px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-size: .94rem;
+      font-weight: 750;
+      line-height: 1.1;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button.primary { background: var(--sun); color: #2e200b; box-shadow: 0 12px 32px rgba(242, 174, 79, .25); }
+    .button.primary:hover { box-shadow: 0 16px 42px rgba(242, 174, 79, .35); }
+    .button.secondary { background: rgba(255, 255, 255, .1); border-color: rgba(255, 255, 255, .45); color: white; backdrop-filter: blur(10px); }
+    .button.ink { background: var(--night); color: white; }
+    .button.line { border-color: var(--line); background: white; color: var(--ink); }
+    .button.text { min-height: auto; padding: 6px 0; border-radius: 0; border-bottom: 2px solid currentColor; }
 
-  /* ---------- ENGINES ---------- */
-  .engines{padding:96px 0 40px}
-  .engines h2{font-size:clamp(38px,5.4vw,62px);font-weight:800;max-width:16em}
-  .engines .intro{max-width:34em;color:var(--mute);margin:16px 0 48px;font-size:1.1em}
-  .egrid{display:grid;grid-template-columns:1fr 1fr;gap:0 44px}
-  @media(max-width:760px){.egrid{grid-template-columns:1fr}}
-  .engine{padding:32px 0;border-top:1px solid var(--line)}
-  .engine .label{color:var(--teal);display:block;margin-bottom:6px}
-  .engine h3{font-size:30px;font-weight:600;margin-bottom:8px}
-  .engine p{color:var(--mute);max-width:32em}
+    /* Warm living arrival */
+    .arrival {
+      position: relative;
+      min-height: 100svh;
+      isolation: isolate;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      color: white;
+      background: var(--deep);
+    }
+    .arrival::before {
+      content: "";
+      position: absolute;
+      inset: -7%;
+      z-index: -4;
+      background: url("santa-barbara-bridge.webp") center 47% / cover no-repeat;
+      transform: scale(1.035);
+      animation: breathe-photo 16s ease-in-out infinite alternate;
+    }
+    .arrival::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background:
+        radial-gradient(circle at 18% 20%, rgba(255, 196, 104, .48), transparent 40%),
+        linear-gradient(180deg, rgba(6, 34, 42, .08) 0%, rgba(6, 34, 42, .36) 42%, rgba(6, 34, 42, .92) 100%),
+        linear-gradient(90deg, rgba(9, 45, 52, .64), rgba(9, 45, 52, .08) 70%);
+    }
+    .aurora { position: absolute; inset: 0; z-index: -2; opacity: .72; filter: blur(22px); pointer-events: none; }
+    .aurora::before, .aurora::after {
+      content: "";
+      position: absolute;
+      width: 52vw;
+      height: 52vw;
+      border-radius: 50%;
+      mix-blend-mode: screen;
+      animation: drift 13s ease-in-out infinite alternate;
+    }
+    .aurora::before { left: -20vw; bottom: -30vw; background: rgba(242, 174, 79, .22); }
+    .aurora::after { right: -25vw; top: -25vw; background: rgba(111, 176, 177, .22); animation-delay: -6s; }
+    .arrival-inner { padding: 132px 0 58px; }
+    .glass {
+      width: min(930px, 100%);
+      padding: clamp(26px, 5vw, 58px);
+      border: 1px solid rgba(255, 255, 255, .24);
+      border-radius: 32px;
+      background: linear-gradient(135deg, rgba(10, 40, 48, .56), rgba(255, 255, 255, .08));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(17px) saturate(118%);
+      animation: glass-pulse 8s ease-in-out infinite;
+    }
+    .arrival h1 {
+      max-width: 11ch;
+      margin-bottom: 22px;
+      color: #fffaf0;
+      font-size: clamp(3.4rem, 10vw, 8.5rem);
+      font-weight: 800;
+      letter-spacing: -.065em;
+      text-shadow: 0 14px 40px rgba(3, 20, 25, .5);
+      transform-origin: center bottom;
+      animation: rise-main 1.45s cubic-bezier(.18, .78, .23, 1) both;
+    }
+    .arrival h1 span { color: #ffc873; }
+    .arrival .promise {
+      max-width: 42ch;
+      margin-bottom: 28px;
+      color: rgba(255, 255, 255, .93);
+      font-size: clamp(1.18rem, 2.35vw, 1.72rem);
+      line-height: 1.3;
+      text-shadow: 0 4px 18px rgba(3, 20, 25, .55);
+      animation: rise-copy 1.2s cubic-bezier(.18, .78, .23, 1) .4s both;
+    }
+    .arrival-actions { display: flex; flex-wrap: wrap; gap: 12px; animation: rise-copy 1.1s ease .7s both; }
+    .arrival-trust { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 24px; color: rgba(255, 255, 255, .76); font-family: "Public Sans", sans-serif; font-size: .78rem; animation: rise-copy 1.1s ease .9s both; }
+    .art-credit { margin: 16px 0 0; color: rgba(255, 255, 255, .6); font-family: "Public Sans", sans-serif; font-size: .7rem; }
+    .scroll-cue { position: absolute; right: 24px; bottom: 38px; display: grid; justify-items: center; gap: 8px; color: rgba(255,255,255,.72); font: 650 .7rem "Public Sans", sans-serif; letter-spacing: .14em; text-transform: uppercase; writing-mode: vertical-rl; }
+    .scroll-cue::after { content: ""; width: 1px; height: 58px; background: linear-gradient(white, transparent); animation: cue 2s ease-in-out infinite; }
 
-  /* ---------- STREAMLINE ---------- */
-  .fix{background:var(--ink);color:#E9EFE8;padding:96px 0 100px;margin-top:60px}
-  :root[data-theme="dark"] .fix, .fix{--fixbg:var(--panel-ink)}
-  .fix{background:var(--fixbg)}
-  .fix .label{color:var(--marigold)}
-  .fix h2{font-size:clamp(38px,5.4vw,64px);font-weight:800;color:#FBF7EC;margin:16px 0 22px;max-width:14em}
-  .fix .lede{color:#CBDAD2;max-width:34em;margin-bottom:46px;font-size:1.1em}
-  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  @media(max-width:760px){.three{grid-template-columns:1fr}}
-  .three div{border-top:3px solid var(--marigold);padding-top:14px}
-  .three h3{font-size:26px;font-weight:600;color:#FBF7EC;margin-bottom:8px}
-  .three p{color:#AFC4BC;font-size:20px}
-  .fix .kicker{margin-top:48px;font-style:italic;font-size:clamp(24px,2.9vw,34px);color:#F0E3C8;max-width:28em}
+    /* Navigation */
+    .nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 100;
+      transition: background .25s ease, box-shadow .25s ease;
+    }
+    .nav.scrolled { background: rgba(255, 253, 248, .92); color: var(--ink); box-shadow: 0 8px 30px rgba(8, 38, 45, .08); backdrop-filter: blur(15px); }
+    .nav:not(.scrolled) { color: white; }
+    .nav-inner { width: min(1240px, calc(100% - 32px)); min-height: 74px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font-weight: 800; letter-spacing: -.035em; text-decoration: none; font-size: 1.22rem; }
+    .brand span { color: var(--sun); }
+    .nav-links { display: flex; align-items: center; gap: 22px; }
+    .nav-links > a { font-size: .83rem; font-weight: 700; text-decoration: none; }
+    .nav .button { min-height: 42px; padding: 10px 16px; }
+    .nav.scrolled .button.secondary { border-color: var(--line); color: var(--ink); background: white; }
 
-  /* ---------- FOUNDER'S NOTE ---------- */
-  .note{padding:96px 0 90px;background:var(--foam)}
-  .note .label{color:var(--teal)}
-  .note blockquote{margin:18px 0 0;border-left:10px solid var(--marigold);padding:6px 0 6px 30px;max-width:28em}
-  .note p{font-size:clamp(25px,3.1vw,38px);line-height:1.32;font-weight:500}
-  .note p + p{margin-top:20px}
+    /* Action router */
+    .current-status { background: #ffd08d; color: #35250d; }
+    .current-status .wrap { min-height: 48px; display: flex; align-items: center; justify-content: center; gap: 12px 22px; flex-wrap: wrap; padding-block: 9px; font: 750 .75rem "Public Sans", sans-serif; letter-spacing: .03em; text-align: center; }
+    .current-status span:not(:last-child)::after { content: "·"; margin-left: 22px; opacity: .48; }
+    .router { position: relative; z-index: 5; margin-top: -1px; padding: 30px 0 70px; background: var(--deep); color: white; }
+    .router-copy { display: flex; justify-content: space-between; align-items: end; gap: 26px; margin-bottom: 24px; }
+    .router h2 { max-width: 10ch; color: white; font-size: clamp(2rem, 4.5vw, 4rem); }
+    .router-copy p { color: rgba(255,255,255,.68); margin-bottom: 7px; }
+    .door-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 13px; }
+    .door {
+      min-height: 190px;
+      padding: 24px;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.06);
+      color: white;
+      text-decoration: none;
+      backdrop-filter: blur(10px);
+      transition: transform .25s ease, background .25s ease, border-color .25s ease;
+    }
+    .door:hover { transform: translateY(-5px); background: rgba(255,255,255,.11); border-color: rgba(255,255,255,.35); }
+    .door .number { color: var(--sun); font: 750 .76rem "Public Sans", sans-serif; letter-spacing: .12em; }
+    .door h3 { margin: 28px 0 8px; color: white; }
+    .door p { margin: 0; color: rgba(255,255,255,.7); font-size: .98rem; line-height: 1.35; }
 
-  /* ---------- OPEN / BOARD / MONEY ---------- */
-  .open{padding:96px 0 88px}
-  .open h2{font-size:clamp(38px,5.4vw,62px);font-weight:800;max-width:14em}
-  .open .intro{color:var(--mute);max-width:34em;margin:16px 0 40px;font-size:1.1em}
-  .seats{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-  .seat{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px 22px;display:flex;flex-direction:column;gap:4px}
-  .seat .label{color:var(--teal)}
-  .seat b{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:23px}
-  .seat span{color:var(--mute);font-size:19px}
-  .money{margin-top:52px;border-left:10px solid var(--marigold);padding:8px 0 8px 30px;max-width:38em}
-  .money h3{font-size:clamp(32px,4.4vw,50px);font-weight:800;margin-bottom:12px}
-  .money p{color:var(--mute);font-size:23px}
+    /* Donation Station */
+    .priority { background: var(--sand); }
+    .priority-shell { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(320px, .9fr); gap: 22px; }
+    .priority-main, .priority-side { border-radius: 28px; overflow: hidden; }
+    .priority-main { padding: clamp(30px, 5vw, 64px); background: var(--night); color: white; }
+    .priority-main h2 { color: white; max-width: 10ch; margin-bottom: 22px; }
+    .priority-main .lead { color: rgba(255,255,255,.78); font-size: 1.22rem; }
+    .priority-main .button-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .priority-side { padding: clamp(28px, 4vw, 44px); background: var(--sun); color: #33250e; display: flex; flex-direction: column; justify-content: space-between; }
+    .priority-side .big { margin: 14px 0 2px; font: 800 clamp(3.7rem, 7vw, 6.8rem)/.9 "Bricolage Grotesque", sans-serif; letter-spacing: -.07em; }
+    .priority-side .weekly { font: 760 1.32rem "Bricolage Grotesque", sans-serif; }
+    .priority-side .caveat { margin: 24px 0 0; padding-top: 18px; border-top: 1px solid rgba(51,37,14,.24); font: 600 .78rem/1.45 "Public Sans", sans-serif; }
+    .needs { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 30px; }
+    .need { padding: 8px 12px; border: 1px solid rgba(255,255,255,.23); border-radius: 999px; color: rgba(255,255,255,.82); font: 650 .78rem "Public Sans", sans-serif; }
 
-  /* ---------- TWO DOORS ---------- */
-  .doors{background:var(--sand);padding:92px 0}
-  .doors h2{font-size:clamp(36px,5vw,56px);font-weight:800;margin-bottom:36px}
-  .doorgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-  @media(max-width:700px){.doorgrid{grid-template-columns:1fr}}
-  .door{border-radius:10px;padding:36px 34px;display:flex;flex-direction:column;gap:14px}
-  .door.rec{background:var(--teal);color:#F2F7F2}
-  .door.rep{background:var(--card);border:2px solid var(--teal)}
-  .door h3{font-size:30px;font-weight:600}
-  .door.rec p{color:#D5E6DF}
-  .door.rep p{color:var(--mute)}
-  .door .btn{align-self:flex-start;margin-top:auto}
+    /* Accountability */
+    .accountability { background: var(--paper); }
+    .funding-shell { display: grid; grid-template-columns: .75fr 1.25fr; gap: 22px; }
+    .funding-total { padding: 38px; border-radius: var(--radius); background: var(--clay); color: white; }
+    .funding-total strong { display: block; margin: 12px 0 8px; font: 800 clamp(4rem, 8vw, 7.4rem)/.9 "Bricolage Grotesque", sans-serif; letter-spacing: -.075em; }
+    .funding-total p { margin: 0; color: rgba(255,255,255,.78); }
+    .funding-flow { padding: 34px; border: 1px solid var(--line); border-radius: var(--radius); background: white; }
+    .flow { display: grid; grid-template-columns: repeat(5, 1fr); align-items: stretch; gap: 8px; margin: 24px 0; }
+    .flow-step { position: relative; min-height: 112px; padding: 16px 12px; border-radius: 14px; background: #f4eee4; display: grid; place-content: center; text-align: center; font: 700 .78rem/1.25 "Public Sans", sans-serif; }
+    .flow-step:not(:last-child)::after { content: "→"; position: absolute; right: -10px; top: 40%; z-index: 2; color: var(--sun-deep); font-size: 1.2rem; }
+    .truth-key { display: flex; flex-wrap: wrap; gap: 9px; }
+    .truth { padding: 7px 11px; border-radius: 999px; background: #eff5f2; font: 700 .74rem "Public Sans", sans-serif; }
+    .truth.reported { background: #fff0d8; }
+    .truth.proof { background: #f7e7e2; }
 
-  /* ---------- FOUNDING ---------- */
-  .launch{padding:96px 0 104px;text-align:center}
-  .launch .label{color:var(--teal)}
-  .launch h2{font-size:clamp(38px,6vw,70px);font-weight:800;margin:18px auto 22px;max-width:14em}
-  .launch p{max-width:32em;margin:0 auto 36px;color:var(--mute);font-size:1.1em}
-  .launch .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-  .roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;text-align:left;margin:0 0 36px}
-  .role{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px 22px;display:flex;flex-direction:column;gap:6px}
-  .role b{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:23px}
-  .role span{color:var(--mute);font-size:19px}
-  .launch .do{font-style:italic;font-size:clamp(24px,3vw,36px);color:var(--marigold-ink);margin:0 auto 30px;max-width:20em}
-  footer{border-top:1px solid var(--line);padding:30px 0 52px;color:var(--mute);font-size:18px}
-  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-  footer a{color:var(--mute)}
-</style></head><body>
+    /* Provider registry */
+    .registry { margin-top: 26px; padding: 30px; border-radius: var(--radius); background: var(--deep); color: white; }
+    .registry-top { display: grid; grid-template-columns: 1fr minmax(280px, 420px); align-items: end; gap: 28px; }
+    .registry h3 { color: white; font-size: clamp(1.6rem, 3vw, 2.4rem); }
+    .registry p { color: rgba(255,255,255,.68); }
+    .registry label { display: block; margin-bottom: 8px; color: rgba(255,255,255,.7); font-size: .8rem; }
+    .registry select { width: 100%; min-height: 50px; padding: 0 14px; border: 1px solid rgba(255,255,255,.22); border-radius: 12px; background: white; color: var(--ink); font-size: .9rem; }
+    .provider-result { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 18px; }
+    .provider-field { padding: 16px; border-radius: 14px; background: rgba(255,255,255,.07); }
+    .provider-field span { display: block; color: rgba(255,255,255,.58); font: 650 .68rem "Public Sans", sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+    .provider-field strong { display: block; margin-top: 5px; color: white; font: 650 .9rem "Public Sans", sans-serif; }
+    .research-spotlight { display: grid; grid-template-columns: .86fr 1.14fr; gap: 18px; margin-top: 18px; padding: 24px; border: 1px solid rgba(255,255,255,.15); border-radius: 18px; background: rgba(255,255,255,.06); }
+    .research-spotlight h4 { margin: 0 0 8px; color: white; font: 750 1.25rem/1.1 "Bricolage Grotesque", sans-serif; }
+    .research-spotlight p { margin: 0; font-size: .94rem; }
+    .research-spotlight .button { align-self: center; justify-self: end; }
 
-<section class="hero" id="top">
-  <div class="photo" aria-hidden="true"></div>
-  <div class="scrim" aria-hidden="true"></div>
-  <div class="stage">
-    <div class="panel p-chip"><span class="dot" aria-hidden="true"></span> showupsb.com · launching 2026</div>
+    /* Ideas */
+    .ideas { background: #f4eee3; }
+    .idea-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .idea-card {
+      position: relative;
+      min-height: 245px;
+      padding: 25px;
+      border: 1px solid rgba(21,56,61,.13);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.72);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 14px 36px rgba(21,56,61,.06);
+      backdrop-filter: blur(8px);
+      transition: transform .24s ease, box-shadow .24s ease, border-color .24s ease;
+    }
+    .idea-card:hover { transform: translateY(-5px); box-shadow: 0 20px 48px rgba(21,56,61,.1); border-color: rgba(21,56,61,.28); }
+    .idea-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .idea-number { color: var(--sun-deep); font: 800 .8rem "Public Sans", sans-serif; }
+    .status { display: inline-flex; padding: 6px 9px; border-radius: 999px; background: #e6f0ed; color: var(--teal); font-size: .66rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }
+    .status.build { background: #fff0d7; color: #7b4e10; }
+    .status.long { background: #f2e6e2; color: #854531; }
+    .idea-card h3 { margin: 30px 0 8px; }
+    .idea-card p { margin-bottom: 20px; color: var(--muted); font-size: .97rem; line-height: 1.38; }
+    .idea-card .open-idea { margin-top: auto; padding: 0; border: 0; background: none; color: var(--teal); text-align: left; font: 750 .83rem "Public Sans", sans-serif; cursor: pointer; }
+    .more-ideas { margin-top: 18px; }
+    .more-ideas summary { width: fit-content; list-style: none; cursor: pointer; }
+    .more-ideas summary::-webkit-details-marker { display: none; }
+    .more-ideas[open] summary { margin-bottom: 18px; }
 
-    <div class="panel p-ink">
-      <h1 id="hl"><span class="w">Show up,</span><br><span class="w">Santa </span><span class="w glow">Barbara.</span></h1>
-      <p>One place for this community to be heard — and one place where the help that gets funded actually reaches the people it was funded for.</p>
+    /* Voice */
+    .voice { background: var(--night); color: white; }
+    .voice h2 { color: white; }
+    .voice .section-head p { color: rgba(255,255,255,.68); }
+    .voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .voice-card { min-height: 360px; padding: clamp(30px, 5vw, 52px); border-radius: 28px; display: flex; flex-direction: column; }
+    .voice-card h3 { margin: 20px 0 12px; font-size: clamp(1.9rem, 4vw, 3.4rem); color: white; }
+    .voice-card p { font-size: 1.1rem; }
+    .voice-card .button { align-self: flex-start; margin-top: auto; }
+    .voice-card.praise { background: var(--teal); }
+    .voice-card.praise p { color: #d8e9e5; }
+    .voice-card.concern { border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.06); }
+    .voice-card.concern p { color: rgba(255,255,255,.72); }
+    .safety-note { margin-top: 18px; color: rgba(255,255,255,.62); font: 500 .78rem/1.5 "Public Sans", sans-serif; }
+
+    /* Progress, people, founder */
+    .progress { background: var(--paper); }
+    .metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .metric { min-height: 180px; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: white; }
+    .metric strong { display: block; margin-bottom: 20px; color: var(--teal); font-size: 2.5rem; letter-spacing: -.05em; }
+    .metric p { margin: 0; color: var(--muted); }
+    .build-team { margin-top: 20px; padding: 34px; border-radius: var(--radius); background: var(--sun); }
+    .build-team h3 { font-size: clamp(1.8rem, 3.7vw, 3rem); }
+    .role-list { display: flex; flex-wrap: wrap; gap: 9px; margin: 24px 0; }
+    .role-list span { padding: 9px 13px; border: 1px solid rgba(51,37,14,.25); border-radius: 999px; font: 700 .78rem "Public Sans", sans-serif; }
+
+    .founder { background: #ecdfcd; }
+    .founder-grid { display: grid; grid-template-columns: .62fr 1.38fr; gap: clamp(32px, 7vw, 90px); align-items: start; }
+    .founder-mark { position: sticky; top: 120px; width: 100%; aspect-ratio: 1; border-radius: 50%; background: var(--night); color: var(--sun); display: grid; place-content: center; text-align: center; font: 800 clamp(2rem, 4vw, 4rem)/.9 "Bricolage Grotesque", sans-serif; letter-spacing: -.06em; box-shadow: var(--shadow); }
+    .founder blockquote { margin: 0; font-size: clamp(1.55rem, 3.4vw, 2.7rem); line-height: 1.25; }
+    .founder blockquote p { max-width: 25ch; }
+    .founder .byline { margin-top: 28px; font: 750 .85rem "Public Sans", sans-serif; }
+
+    .final { position: relative; padding: 100px 0 116px; overflow: hidden; background: var(--deep); color: white; text-align: center; }
+    .final::before { content: "SHOW UP"; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: rgba(255,255,255,.025); font: 800 22vw/1 "Bricolage Grotesque", sans-serif; white-space: nowrap; }
+    .final h2 { position: relative; max-width: 13ch; margin: 0 auto 22px; color: white; }
+    .final p { position: relative; margin: 0 auto 30px; color: rgba(255,255,255,.7); font-size: 1.16rem; }
+    .final .button-row { position: relative; display: flex; justify-content: center; flex-wrap: wrap; gap: 11px; }
+    .disclaimer { padding: 34px 0; background: #e4d5c0; }
+    .disclaimer p { margin: 0; max-width: none; color: #465a57; font: 560 .78rem/1.55 "Public Sans", sans-serif; }
+    footer { padding: 28px 0 90px; border-top: 1px solid rgba(255,255,255,.1); background: var(--deep); color: rgba(255,255,255,.57); font: 500 .78rem/1.55 "Public Sans", sans-serif; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+
+    /* Dialog drawer */
+    dialog { width: min(720px, calc(100% - 24px)); max-height: min(82svh, 820px); margin: auto; padding: 0; border: 0; border-radius: 26px; color: var(--ink); background: var(--paper); box-shadow: 0 30px 100px rgba(6, 30, 36, .45); }
+    dialog::backdrop { background: rgba(5, 26, 31, .72); backdrop-filter: blur(7px); }
+    .dialog-inner { padding: clamp(26px, 5vw, 48px); }
+    .dialog-head { display: flex; justify-content: space-between; gap: 20px; align-items: start; }
+    .dialog-head h2 { max-width: 12ch; font-size: clamp(2.1rem, 5vw, 3.7rem); }
+    .close { flex: 0 0 auto; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%; background: white; color: var(--ink); cursor: pointer; font-size: 1.3rem; }
+    .dialog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 28px 0; }
+    .dialog-box { padding: 18px; border-radius: 15px; background: #f3ede3; }
+    .dialog-box b { display: block; margin-bottom: 5px; font: 750 .76rem "Public Sans", sans-serif; text-transform: uppercase; letter-spacing: .08em; color: var(--teal); }
+    .dialog-box p { margin: 0; font-size: .98rem; }
+    .dialog-actions { display: flex; flex-wrap: wrap; gap: 9px; }
+
+    .mobile-actions { display: none; }
+
+    @keyframes rise-main { from { opacity: 0; transform: translateY(75px) rotateX(28deg); filter: blur(9px); } to { opacity: 1; transform: translateY(0) rotateX(0); filter: blur(0); } }
+    @keyframes rise-copy { from { opacity: 0; transform: translateY(34px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes breathe-photo { from { transform: scale(1.035) translate3d(0,0,0); } to { transform: scale(1.075) translate3d(-.5%, -.4%, 0); } }
+    @keyframes drift { from { transform: translate3d(0,0,0) scale(.92); } to { transform: translate3d(8%, -5%, 0) scale(1.08); } }
+    @keyframes glass-pulse { 0%,100% { background-color: rgba(10,40,48,.16); } 50% { background-color: rgba(10,40,48,.25); } }
+    @keyframes cue { 0%,100% { opacity: .35; transform: scaleY(.72); transform-origin: top; } 50% { opacity: 1; transform: scaleY(1); } }
+
+    @media (max-width: 940px) {
+      .nav-links > a:not(.button) { display: none; }
+      .door-grid, .metric-grid { grid-template-columns: 1fr 1fr; }
+      .priority-shell, .funding-shell, .founder-grid { grid-template-columns: 1fr; }
+      .founder-mark { position: static; max-width: 230px; }
+      .idea-grid { grid-template-columns: 1fr 1fr; }
+      .flow { grid-template-columns: 1fr; }
+      .flow-step { min-height: auto; }
+      .flow-step:not(:last-child)::after { content: "↓"; left: 50%; right: auto; top: auto; bottom: -13px; transform: translateX(-50%); }
+      .provider-result { grid-template-columns: 1fr 1fr; }
+      .research-spotlight { grid-template-columns: 1fr; }
+      .research-spotlight .button { justify-self: start; }
+    }
+    @media (max-width: 680px) {
+      body { font-size: 17px; padding-bottom: 68px; }
+      .wrap { width: min(100% - 28px, 1180px); }
+      .section { padding: 68px 0; }
+      .section-head, .registry-top { grid-template-columns: 1fr; gap: 16px; }
+      .arrival { min-height: 100svh; }
+      .arrival::before { background-position: 58% center; }
+      .arrival-inner { padding: 110px 0 34px; }
+      .glass { padding: 25px 20px; border-radius: 24px; }
+      .arrival h1 { max-width: 10ch; font-size: clamp(3.1rem, 16vw, 5.7rem); }
+      .arrival .promise { font-size: 1.14rem; }
+      .arrival-actions .button { width: 100%; }
+      .scroll-cue { display: none; }
+      .nav-inner { min-height: 64px; }
+      .nav-links .button { display: none; }
+      .current-status .wrap { display: block; padding-block: 10px; }
+      .current-status span { display: block; }
+      .current-status span:not(:last-child)::after { content: ""; margin: 0; }
+      .router { padding-bottom: 50px; }
+      .router-copy { display: block; }
+      .router-copy p { margin-top: 12px; }
+      .door-grid, .idea-grid, .voice-grid, .metric-grid { grid-template-columns: 1fr; }
+      .door { min-height: 155px; }
+      .priority-side .big { font-size: 4.7rem; }
+      .funding-total { padding: 28px; }
+      .registry { padding: 22px; }
+      .provider-result { grid-template-columns: 1fr; }
+      .idea-card { min-height: 210px; }
+      .voice-card { min-height: 330px; }
+      .dialog-grid { grid-template-columns: 1fr; }
+      .mobile-actions { position: fixed; z-index: 90; inset: auto 8px 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 7px; padding: 7px; border: 1px solid rgba(255,255,255,.18); border-radius: 999px; background: rgba(10,40,48,.9); backdrop-filter: blur(14px); box-shadow: 0 14px 40px rgba(5,26,31,.28); }
+      .mobile-actions .button { min-height: 46px; padding: 11px 13px; font-size: .8rem; }
+      footer { padding-bottom: 32px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top" data-track="nav_home">SHOW UP <span>SB</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#priority" data-track="nav_donation">Donation Station</a>
+        <a href="#ideas" data-track="nav_ideas">Ideas</a>
+        <a href="#accountability" data-track="nav_accountability">Accountability</a>
+        <a class="button secondary" href="#paths" data-track="nav_take_action">Take Action</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="ctas">
-      <a class="btn btn-sun" href="#doors">Tell us who showed up for you</a>
-      <a class="btn btn-ghost" href="#what">What we're building</a>
-    </div>
-    <div class="credit">State Street · photo <a href="https://commons.wikimedia.org/wiki/File:State_Street,_Santa_Barbara_-_panoramio_(1).jpg" rel="noopener">Thomas Camargo</a>, CC BY 3.0</div>
-  </div>
-</section>
-
-<section class="dedic">
-  <div class="wrap">
-    <div class="label">Who this is for</div>
-    <h2>From the highest office of the largest organization down to the quietest voice — the one everybody walks past.</h2>
-    <p>The teens. The women. The silent ones on the street. And everyone in between. This platform is dedicated to them first.</p>
-    <p>And to every provider, business, and neighbor already doing this work right: <em>you deserve to be seen, funded, and copied.</em></p>
-  </div>
-</section>
-
-<section class="engines" id="what">
-  <div class="wrap">
-    <h2>What Show Up Santa Barbara does</h2>
-    <p class="intro">Connecting what this county already has to the people who need it.</p>
-    <div class="egrid">
-      <div class="engine"><span class="label">The Directory</span><h3>Every service, one page</h3><p>Housing, recovery, reentry, food, mental health, vocational — every provider in the county, linked directly, kept current.</p></div>
-      <div class="engine"><span class="label">The Board</span><h3>Sober life, posted daily</h3><p>Beach walks, hikes, coffee, game nights. Small groups, no pressure, nothing clinical. Post in under a minute. Come alone — that's normal here.</p></div>
-      <div class="engine"><span class="label">The Pipeline</span><h3>Your story is a career</h3><p>California pays certified Peer Support Specialists through Medi-Cal. If you made it through the system, you're qualified to pull the next person through. We map the path and who's hiring.</p></div>
-      <div class="engine"><span class="label">Night Outreach</span><h3>One on one, from the heart</h3><p>We go out at night to the people on the street who don't normally talk to anyone — and to the most vulnerable — one person at a time. Non-offensive. No agenda. Done from the heart. Clean clothes, sized on the spot, handed over right there.</p></div>
-      <div class="engine"><span class="label">The Hiring Bridge</span><h3>Local jobs for people coming home</h3><p>Local businesses hiring men and women out of reentry and recovery, with mentorship attached so the job sticks.</p></div>
-      <div class="engine"><span class="label">Recognition</span><h3>The ones who show up, named</h3><p>Public recognition — every year — for the providers, businesses, and individuals this community says showed up. Praise in public. Concerns handled privately, and acted on.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="fix">
-  <div class="wrap">
-    <div class="label">Streamlining</div>
-    <h2>The problem is simpler than it looks.</h2>
-    <p class="lede">A great deal of grant and public money comes into this community through service providers — and too often, outside agencies are the ones deciding how our money gets spent here. Nobody is looking at the whole board.</p>
-    <div class="three">
-      <div><h3>Providers step on each other</h3><p>Two organizations, one block apart, funded to do the same thing, not talking.</p></div>
-      <div><h3>Efforts get duplicated</h3><p>The same intake, the same forms, the same waitlist — three times over, while the gap in between goes unfilled.</p></div>
-      <div><h3>Trust falls through the gaps</h3><p>The people who need help stop believing anyone will show up. That is exactly why trust in service providers is so low right now.</p></div>
-    </div>
-    <p class="kicker">It takes coordination, transparency, and a little honest work. Resources move away from those taking advantage of the gift they were given — and toward the people showing real skill, real compassion, and real desire.</p>
-  </div>
-</section>
-
-<section class="note">
-  <div class="wrap">
-    <div class="label">From the founder</div>
-    <blockquote>
-      <p>I know where a lot of changes need to be made, and a lot of people need to step up to the plate.</p>
-      <p>I am all about support, and all about accountability. But most of all I am about the people — this community.</p>
-      <p>If we are being offered a fair shake, we use that opportunity to the best of our ability, as a community. We do something about it. We don't talk about it.</p>
-    </blockquote>
-  </div>
-</section>
-
-<section class="open" id="open">
-  <div class="wrap">
-    <h2>Built in the open, from day one.</h2>
-    <p class="intro">Who sits at the table — and who we are calling for.</p>
-    <div class="seats">
-      <div class="seat"><b>Psychiatrist</b><span>Clinical oversight</span></div>
-      <div class="seat"><b>Psychologist</b><span>Behavioral health</span></div>
-      <div class="seat"><b>Nonprofit attorney</b><span>Governance and compliance</span></div>
-      <div class="seat"><b>Service-provider leader</b><span>The provider side of the table</span></div>
-      <div class="seat"><b>Community worship leaders</b><span>A position, not a volunteer slot</span></div>
-      <div class="seat"><b>Night outreach program</b><span>One on one, from the heart, for the people nobody talks to</span></div>
-      <div class="seat"><b>Donations team</b><span>Seeking donations in bulk for every local provider — so goods land here, not in a budget line</span></div>
-      <div class="seat"><b>Marketing team</b><span>Get the name out. Show what a flagship community looks like when it unites</span></div>
-      <div class="seat"><b>Founding partners</b><span>Providers, businesses, and neighbors already doing this right. Claim your place and help set the standard</span></div>
-    </div>
-    <div class="money">
-      <h3>Public accounting, posted. Every dollar itemized.</h3>
-      <p>A founder on payroll does not sit on the board. Advisory position only — and it can be removed at any point, by the board or by the community, if he is no longer a good fit. Once you hear the story you will understand: he will never quit on this community. But the community holds the door.</p>
-    </div>
-  </div>
-</section>
-
-<section class="doors" id="doors">
-  <div class="wrap">
-    <h2>Two doors. Both change this town.</h2>
-    <div class="doorgrid">
-      <div class="door rec">
-        <h3>Recognize someone who showed up</h3>
-        <p>A caseworker who answered at the worst moment. A shelter that acted the same day. A business that hired someone nobody else would. Name them.</p>
-        <a class="btn btn-sun" href="mailto:sb.david.j.lemmons@gmail.com?subject=Show%20Up%20SB%20%E2%80%94%20Recognition">Share a recognition</a>
+  <section class="arrival" id="top" aria-labelledby="arrival-title">
+    <div class="aurora" aria-hidden="true"></div>
+    <div class="wrap arrival-inner">
+      <div class="glass">
+        <p class="eyebrow light">Show Up, Santa Barbara</p>
+        <h1 id="arrival-title">YOU FOUND US <span>&amp; YOU DO MATTER.</span></h1>
+        <p class="promise">A safe place being built where every voice can be heard—with or without your name, quietly or loudly. We hear you. You can yell at us if need be.</p>
+        <div class="arrival-actions">
+          <a class="button primary" href="#help" data-track="secure_route_opened">I Need Help</a>
+          <a class="button secondary" href="#paths" data-track="secure_route_opened">Share Your Voice</a>
+          <a class="button secondary" href="#priority" data-track="hero_donation_station">Launch the Donation Station</a>
+        </div>
+        <div class="arrival-trust">
+          <span>Founder-led</span><span>Partner-seeking</span><span>Solutions first</span><span>No money collected here</span>
+        </div>
+        <p class="art-credit">Original AI-generated concept artwork · proof of concept · final art approval pending</p>
       </div>
-      <div class="door rep">
-        <h3>Tell us where it broke</h3>
-        <p>A door that stayed shut. A concern that vanished. Told privately, handled privately, and acted on — so the same gap doesn't swallow the next person.</p>
-        <a class="btn btn-ink" href="mailto:sb.david.j.lemmons@gmail.com?subject=Show%20Up%20SB%20%E2%80%94%20Concern">Tell us what happened</a>
+    </div>
+    <span class="scroll-cue" aria-hidden="true">Keep going</span>
+  </section>
+
+  <aside class="current-status" aria-label="Current project status">
+    <div class="wrap"><span>Founder-led</span><span>Organizing</span><span>Private concern intake not yet open</span><span>No money or public drop-offs accepted</span></div>
+  </aside>
+
+  <main id="main">
+    <section class="router" id="paths">
+      <div class="wrap">
+        <div class="router-copy">
+          <h2>Choose your door.</h2>
+          <p>Start where you are. You can always come back and choose another path.</p>
+        </div>
+        <div class="door-grid">
+          <a class="door" href="#help" data-track="secure_route_opened"><span class="number">01</span><h3>Find help</h3><p>Use established resources now while warmer handoffs are built.</p></a>
+          <a class="door" href="#voice" data-track="secure_route_opened"><span class="number">02</span><h3>Speak up</h3><p>See how the private concern pathway is being protected.</p></a>
+          <a class="door" href="#priority" data-track="door_resources"><span class="number">03</span><h3>Offer resources</h3><p>Bring goods, space, transportation, or practical capacity.</p></a>
+          <a class="door" href="#team" data-track="door_partner"><span class="number">04</span><h3>Build with us</h3><p>Join as a provider, volunteer, advisor, or board builder.</p></a>
+          <a class="door" href="#ideas" data-track="door_evidence"><span class="number">05</span><h3>Explore ideas</h3><p>See each proposal, its stage, next gate, and evidence.</p></a>
+        </div>
       </div>
+    </section>
+
+    <section class="section priority" id="priority">
+      <div class="wrap">
+        <p class="eyebrow">Priority No. 1 · Organizing now</p>
+        <div class="priority-shell">
+          <article class="priority-main">
+            <h2>Keep good things working here.</h2>
+            <p class="lead">The proposed Donation Station would organize quality clothing, furniture, household goods, outreach packs, transportation, and provider requests—so useful donations can reach Santa Barbara neighbors through an authorized local operator.</p>
+            <div class="needs" aria-label="Donation Station needs">
+              <span class="need">Fiscal sponsor</span><span class="need">Space</span><span class="need">Vehicles</span><span class="need">Provider partners</span><span class="need">Sorting team</span><span class="need">Board builders</span>
+            </div>
+            <div class="button-row">
+              <a class="button primary" href="mailto:sb.david.j.lemmons@gmail.com?subject=SHOW%20UP%20SB%20%E2%80%94%20Donation%20Station%20offer&body=I%20can%20offer%3A%20" data-track="donation_offer">Offer Goods or Resources</a>
+              <a class="button secondary" href="mailto:sb.david.j.lemmons@gmail.com?subject=SHOW%20UP%20SB%20%E2%80%94%20Donation%20Station%20partner" data-track="donation_partner">Help Build the Station</a>
+            </div>
+          </article>
+          <aside class="priority-side">
+            <div>
+              <p class="eyebrow">Founder planning estimate</p>
+              <div class="big">10–15</div>
+              <div class="weekly">truckloads each week</div>
+              <p>That would equal approximately 520–780 truckloads in a year—enough volume to justify testing a local recovery and redistribution system.</p>
+            </div>
+            <p class="caveat">Independent verification is pending. This estimate is presented openly as the founder’s planning premise, not as a confirmed public statistic.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section accountability" id="accountability">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="eyebrow">Follow the public dollar</p><h2>Award. Contract. Result. Open question.</h2></div>
+          <p>We will show what the records support, identify what remains unclear, invite documented corrections, and update the record openly.</p>
+        </div>
+        <div class="funding-shell">
+          <article class="funding-total">
+            <span class="eyebrow light">Proposition 47</span>
+            <strong>≈$20M</strong>
+            <p>Approximate award authority to Santa Barbara County since 2019 across Cohorts 2, 3, and 5. Award authority is not the same as money spent.</p>
+          </article>
+          <article class="funding-flow">
+            <h3>The funding river</h3>
+            <div class="flow" aria-label="Funding accountability flow">
+              <div class="flow-step">State / BSCC</div>
+              <div class="flow-step">County prime agency</div>
+              <div class="flow-step">Provider or evaluator</div>
+              <div class="flow-step">Service delivered</div>
+              <div class="flow-step">Result and gap</div>
+            </div>
+            <div class="truth-key"><span class="truth">Official-source fact</span><span class="truth reported">Agency/provider reported</span><span class="truth proof">Not yet verified</span></div>
+            <p style="margin:18px 0 0;color:var(--muted);font-size:.92rem">Cohort 2 statewide reporting lists approximately $5.805 million spent. Comparable final expenditure totals for Cohorts 3 and 5 were not located. No substantiated duplicate-billing finding was identified in the reviewed public record; those records also do not permit a complete transaction-level test.</p>
+          </article>
+        </div>
+
+        <section class="registry" aria-labelledby="provider-title">
+          <div class="registry-top">
+            <div><p class="eyebrow light">Evidence registry · expanding</p><h3 id="provider-title">Who appears in the public funding record?</h3><p>This is a dated funding registry—not proof of current service availability, payment, or endorsement.</p></div>
+            <div>
+              <label for="provider-select">Choose an organization</label>
+              <select id="provider-select" data-track="provider_select">
+                <optgroup label="Proposition 47 records">
+                  <option value="goodsam">Good Samaritan Shelter</option>
+                  <option value="fsa">Family Service Agency of Santa Barbara County</option>
+                  <option value="bwell">County Behavioral Wellness / Behavioral Health</option>
+                  <option value="pd">County Public Defender</option>
+                  <option value="sheriff">Santa Barbara County Sheriff’s Office</option>
+                  <option value="da">Santa Barbara County District Attorney</option>
+                  <option value="rda">Resource Development Associates</option>
+                  <option value="ucsb">UC Santa Barbara / The Regents</option>
+                  <option value="cada">Council on Alcoholism and Drug Abuse</option>
+                  <option value="tarzana">Tarzana Treatment Centers</option>
+                </optgroup>
+                <optgroup label="Other verified County contracts">
+                  <option value="stalwart">Stalwart Recovery / Stalwart Clean &amp; Sober, Inc.</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+          <div class="provider-result" id="provider-result" aria-live="polite"></div>
+          <div class="research-spotlight" id="stalwart-spotlight" hidden>
+            <div><h4>Stalwart Recovery: contract and outcome review</h4><p>Three independent research lanes reviewed funding, services, outcomes, governance, oversight, and unresolved records. The public brief separates contract ceilings from cash paid and structural risk from proven misconduct.</p></div>
+            <a class="button secondary" href="stalwart-recovery.html" data-track="stalwart_research">Open the sourced deep dive</a>
+          </div>
+        </section>
+        <p style="margin:18px 0 0"><a class="button text" href="https://www.bscc.ca.gov/s_bsccprop47/" rel="noopener" target="_blank" data-track="prop47_source">Open the official BSCC records</a></p>
+      </div>
+    </section>
+
+    <section class="section ideas" id="ideas">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="eyebrow">Ideas in motion</p><h2>Every idea gets a box—and an honest stage.</h2></div>
+          <p>The order reflects what can move now, what needs partners, and what requires public authority. It is not a ranking of whose needs matter most.</p>
+        </div>
+        <div class="idea-grid">
+          <article class="idea-card"><div class="idea-top"><span class="idea-number">01</span><span class="status">Organizing</span></div><h3>Donation Station</h3><p>Keep quality goods local and route them to providers and neighbors with dignity.</p><button class="open-idea" data-idea="donation" data-track="idea_donation">Open idea →</button></article>
+          <article class="idea-card"><div class="idea-top"><span class="idea-number">02</span><span class="status build">Intake not open</span></div><h3>Share Your Voice</h3><p>Build a protected acknowledgment and follow-through route before accepting private stories.</p><button class="open-idea" data-idea="voice" data-track="secure_route_opened">Open idea →</button></article>
+          <article class="idea-card"><div class="idea-top"><span class="idea-number">03</span><span class="status build">Moderation design</span></div><h3>Celebrate Good Work</h3><p>Publicly recognize providers, workers, businesses, and neighbors who show up.</p><button class="open-idea" data-idea="recognition" data-track="idea_recognition">Open idea →</button></article>
+          <article class="idea-card"><div class="idea-top"><span class="idea-number">04</span><span class="status build">Directory not live</span></div><h3>Find the Right Service</h3><p>A living directory organized around what a person needs—not agency structure.</p><button class="open-idea" data-idea="directory" data-track="idea_directory">Open idea →</button></article>
+          <article class="idea-card"><div class="idea-top"><span class="idea-number">05</span><span class="status build">Concept</span></div><h3>Night Outreach</h3><p>One person at a time, with practical supplies, respect, and no hidden agenda.</p><button class="open-idea" data-idea="outreach" data-track="idea_outreach">Open idea →</button></article>
+          <article class="idea-card"><div class="idea-top"><span class="idea-number">06</span><span class="status build">Concept</span></div><h3>Sober Connection</h3><p>Low-pressure walks, coffee, activities, encouragement, and belonging.</p><button class="open-idea" data-idea="sober" data-track="idea_sober">Open idea →</button></article>
+          <article class="idea-card"><div class="idea-top"><span class="idea-number">07</span><span class="status build">Research</span></div><h3>Peer Leadership Hub</h3><p>Turn lived experience into certification, supervision, employment, and service.</p><button class="open-idea" data-idea="peer" data-track="idea_peer">Open idea →</button></article>
+          <article class="idea-card"><div class="idea-top"><span class="idea-number">08</span><span class="status build">Research</span></div><h3>Reentry Bridge</h3><p>Begin before release and connect identity, care, work, housing, and mentorship.</p><button class="open-idea" data-idea="reentry" data-track="idea_reentry">Open idea →</button></article>
+          <article class="idea-card"><div class="idea-top"><span class="idea-number">09</span><span class="status build">Governance required</span></div><h3>Accountability & Solutions</h3><p>Private repair, provider response, documented corrections, and public totals.</p><button class="open-idea" data-idea="accountability" data-track="secure_route_opened">Open idea →</button></article>
+        </div>
+        <details class="more-ideas">
+          <summary class="button line" data-track="ideas_show_all">Show all ten additional ideas</summary>
+          <div class="idea-grid">
+            <article class="idea-card"><div class="idea-top"><span class="idea-number">10</span><span class="status build">Partner needed</span></div><h3>Work & Learning Bridge</h3><p>Local hiring, education, benefits navigation, and mentorship that helps work stick.</p><button class="open-idea" data-idea="work" data-track="idea_work">Open idea →</button></article>
+            <article class="idea-card"><div class="idea-top"><span class="idea-number">11</span><span class="status build">Safeguarding co-design</span></div><h3>Family & Teen Bridge</h3><p>Support reconnection while protecting children, parents, and family choice.</p><button class="open-idea" data-idea="family" data-track="idea_family">Open idea →</button></article>
+            <article class="idea-card"><div class="idea-top"><span class="idea-number">12</span><span class="status build">Women-led design</span></div><h3>Women’s Reentry Track</h3><p>A separate pathway designed and led by women with relevant lived experience.</p><button class="open-idea" data-idea="women" data-track="idea_women">Open idea →</button></article>
+            <article class="idea-card"><div class="idea-top"><span class="idea-number">13</span><span class="status long">Public authority</span></div><h3>Alternative Sentencing</h3><p>Structured, lawful work-and-learning pathways for eligible voluntary participants.</p><button class="open-idea" data-idea="sentencing" data-track="idea_sentencing">Open idea →</button></article>
+            <article class="idea-card"><div class="idea-top"><span class="idea-number">14</span><span class="status long">Feasibility</span></div><h3>Reentry Campus</h3><p>Explore program improvements at the active Calle Real custody campus—not a fictional vacant farm.</p><button class="open-idea" data-idea="campus" data-track="idea_campus">Open idea →</button></article>
+            <article class="idea-card"><div class="idea-top"><span class="idea-number">15</span><span class="status long">Privacy + legal design</span></div><h3>Shared Referral Status</h3><p>Consent-based handoff status without exposing private health or recovery details.</p><button class="open-idea" data-idea="referral" data-track="idea_referral">Open idea →</button></article>
+            <article class="idea-card"><div class="idea-top"><span class="idea-number">16</span><span class="status build">Concept</span></div><h3>Nonprofit Fleet Alliance</h3><p>Pool buying power and hand down safe vehicles under transparent rules.</p><button class="open-idea" data-idea="fleet" data-track="idea_fleet">Open idea →</button></article>
+            <article class="idea-card"><div class="idea-top"><span class="idea-number">17</span><span class="status build">Concept</span></div><h3>Volunteer Action Days</h3><p>Turn community goodwill into safe, useful projects led by authorized partners.</p><button class="open-idea" data-idea="volunteer" data-track="idea_volunteer">Open idea →</button></article>
+            <article class="idea-card"><div class="idea-top"><span class="idea-number">18</span><span class="status long">Long-term concept</span></div><h3>Housing & Community Hub</h3><p>A partner-led physical home for connection, navigation, learning, and practical help.</p><button class="open-idea" data-idea="housing" data-track="idea_housing">Open idea →</button></article>
+            <article class="idea-card"><div class="idea-top"><span class="idea-number">19</span><span class="status build">Researching</span></div><h3>Funding Transparency</h3><p>Map public funding, providers, reported services, outcomes, and unresolved questions.</p><button class="open-idea" data-idea="funding" data-track="idea_funding">Open idea →</button></article>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section voice" id="voice">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="eyebrow light">Praise in public · repair in private</p><h2>You shouldn’t have to shout to be heard.</h2></div>
+          <p>We will protect dignity, seek documentation, give organizations a fair opportunity to respond, and publish only verified or anonymized outcomes.</p>
+        </div>
+        <div class="voice-grid">
+          <article class="voice-card praise">
+            <span class="eyebrow light">Give a shout-out</span>
+            <h3>Name who showed up.</h3>
+            <p>Recognize a caseworker, nonprofit, business, neighbor, faith community, or public employee who made the next step possible.</p>
+            <a class="button primary" href="mailto:sb.david.j.lemmons@gmail.com?subject=SHOW%20UP%20SB%20%E2%80%94%20Shout-Out&body=Who%20showed%20up%3F%20%0AWhat%20did%20they%20do%3F%20%0AMay%20we%20contact%20you%20before%20publishing%3F%20" data-track="shoutout_start">Share a Shout-Out</a>
+          </article>
+          <article class="voice-card concern">
+            <span class="eyebrow light">Share a concern</span>
+            <h3>Tell us where it broke.</h3>
+            <p>The protected intake system is being established before private stories are accepted. Until safeguards and human review are active, use verified crisis resources below or send only a general, non-sensitive question.</p>
+            <a class="button secondary" href="mailto:sb.david.j.lemmons@gmail.com?subject=SHOW%20UP%20SB%20%E2%80%94%20General%20question&body=Please%20do%20not%20include%20medical%2C%20substance-use%2C%20legal%2C%20or%20other%20sensitive%20personal%20details%20in%20email.%20My%20general%20question%3A%20" data-track="secure_route_opened">Ask a General Question</a>
+          </article>
+        </div>
+        <p class="safety-note">“Private” means information will not be posted publicly; it does not create legal privilege or guarantee absolute confidentiality. Show Up SB is not an emergency, medical, legal, or crisis service. If there is immediate danger, call 911. For mental-health or suicide crisis support, call or text 988. For local health and human-service navigation, dial 211.</p>
+      </div>
+    </section>
+
+    <section class="section progress" id="help">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="eyebrow">Start with a safe next step</p><h2>Real help already exists.</h2></div>
+          <p>Show Up SB is building warmer handoffs. Today, these established services are the fastest starting points.</p>
+        </div>
+        <div class="metric-grid">
+          <article class="metric"><strong>211</strong><p>Local health, housing, food, and human-service navigation.</p><a class="button text" href="tel:211" data-track="secure_route_opened">Call 211</a></article>
+          <article class="metric"><strong>988</strong><p>Mental-health and suicide crisis support by call or text.</p><a class="button text" href="tel:988" data-track="secure_route_opened">Call 988</a></article>
+          <article class="metric"><strong>911</strong><p>Immediate danger or a life-threatening emergency.</p><a class="button text" href="tel:911" data-track="secure_route_opened">Call 911</a></article>
+          <article class="metric"><strong>Open</strong><p>Provider directory and verified warm-handoff network are being built now.</p><a class="button text" href="mailto:sb.david.j.lemmons@gmail.com?subject=SHOW%20UP%20SB%20%E2%80%94%20Provider%20directory" data-track="directory_contribute">Add a Resource</a></article>
+        </div>
+        <section class="build-team" id="team">
+          <p class="eyebrow">Help build the factory</p>
+          <h3>Bring your lane. Keep your independence.</h3>
+          <p>Show Up SB is seeking an operating nonprofit or fiscal sponsor, board-building leaders, service providers, space, transportation, sorting and inventory expertise, communications support, and volunteers.</p>
+          <div class="role-list"><span>Nonprofit / fiscal sponsor</span><span>Board builder</span><span>Provider partner</span><span>Space</span><span>Goods</span><span>Transportation</span><span>Operations</span><span>Volunteer</span></div>
+          <a class="button ink" href="mailto:sb.david.j.lemmons@gmail.com?subject=SHOW%20UP%20SB%20%E2%80%94%20I%20can%20help&body=My%20name%2Forganization%3A%20%0AWhat%20I%20can%20offer%3A%20%0ABest%20way%20to%20reach%20me%3A%20" data-track="partner_start">Tell Us What You Can Bring</a>
+        </section>
+      </div>
+    </section>
+
+    <section class="section founder" id="founder">
+      <div class="wrap founder-grid">
+        <div class="founder-mark" aria-hidden="true">OUT OF<br>THE FIRE.</div>
+        <div>
+          <p class="eyebrow">From the founder</p>
+          <blockquote>
+            <p>“I survived foster care, trauma, addiction, institutions, success, failure, recovery, and rebuilding. By the grace of God, I made it through those fires.”</p>
+            <p>“My purpose now is to help build routes that guide other people out of theirs. I’m not attached to credit or control. I’m attached to getting people home.”</p>
+          </blockquote>
+          <p class="byline">David Lemmons · Founder and Community Systems Architect</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="wrap">
+        <p class="eyebrow light">Every voice heard · every handoff followed</p>
+        <h2>Bring a concern. Bring a solution. Bring your organization.</h2>
+        <p>Show up for Santa Barbara.</p>
+        <div class="button-row"><a class="button primary" href="#paths" data-track="final_take_action">Choose Your Door</a><a class="button secondary" href="#ideas" data-track="final_explore">Explore the Ideas</a></div>
+      </div>
+    </section>
+  </main>
+
+  <aside class="disclaimer">
+    <div class="wrap"><p>Show Up SB is founder-led and organizing. It is not currently a nonprofit operator, licensed service provider, fiscal sponsor, public agency, emergency service, healthcare provider, or law firm. It is not accepting money or public drop-off goods. Ideas and funding paths are proposals unless expressly marked otherwise. Provider and funding records summarize dated sources; they do not imply endorsement, current capacity, eligibility, or payment. This site is not monitored 24/7. “Every voice heard” is a guiding value—not a guarantee of service, response, or resolution. Faith motivates the founder; participation and access are open to everyone regardless of belief.</p></div>
+  </aside>
+
+  <footer>
+    <div class="wrap">
+      <span>SHOW UP SB · Founder-led community project · Santa Barbara, California</span>
+      <span>No direct monetary donations are collected on this website.</span>
     </div>
-  </div>
-</section>
+  </footer>
 
-<section class="launch" id="stepup">
-  <div class="wrap">
-    <div class="label">We are calling for</div>
-    <h2>The community steps up too.</h2>
-    <p>This is a flagship community, and we are uniting. So the ask goes both ways. Every seat above is open to the people of this county.</p>
-    <p class="do">We do something about it. We don't talk about it.</p>
-    <div class="row">
-      <a class="btn btn-sun" href="mailto:sb.david.j.lemmons@gmail.com?subject=Show%20Up%20SB%20%E2%80%94%20I%27m%20stepping%20up">Step up</a>
+  <div class="mobile-actions" aria-label="Quick actions">
+    <a class="button primary" href="#help" data-track="secure_route_opened">I Need Help</a>
+    <a class="button secondary" href="#paths" data-track="mobile_action">Take Action</a>
+  </div>
+
+  <dialog id="idea-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-inner">
+      <div class="dialog-head"><div><p class="eyebrow" id="dialog-stage">Idea</p><h2 id="dialog-title">Idea title</h2></div><button class="close" type="button" aria-label="Close idea">×</button></div>
+      <p id="dialog-summary"></p>
+      <div class="dialog-grid">
+        <div class="dialog-box"><b>First move</b><p id="dialog-first"></p></div>
+        <div class="dialog-box"><b>What it needs</b><p id="dialog-needs"></p></div>
+        <div class="dialog-box"><b>Safeguard</b><p id="dialog-safe"></p></div>
+        <div class="dialog-box"><b>Success looks like</b><p id="dialog-success"></p></div>
+      </div>
+      <div class="dialog-actions"><a class="button ink" id="dialog-help" href="mailto:sb.david.j.lemmons@gmail.com?subject=SHOW%20UP%20SB%20%E2%80%94%20I%20can%20help">I Can Help</a><a class="button line" id="dialog-question" href="mailto:sb.david.j.lemmons@gmail.com?subject=SHOW%20UP%20SB%20%E2%80%94%20Idea%20question">Ask a Question</a></div>
     </div>
-  </div>
-</section>
+  </dialog>
 
-<footer>
-  <div class="wrap">
-    <span>Show Up Santa Barbara — a community project, founded by lived experience.</span>
-  </div>
-</footer>
+  <script>
+    // Public-page event layer. It records no form answers or sensitive narratives.
+    window.dataLayer = window.dataLayer || [];
+    function trackPublicEvent(name, detail) {
+      var event = Object.assign({ event: "susb_" + name, page_path: location.pathname }, detail || {});
+      window.dataLayer.push(event);
+      window.dispatchEvent(new CustomEvent("susb:track", { detail: event }));
+    }
+    document.addEventListener("click", function (event) {
+      var item = event.target.closest("[data-track]");
+      if (item) {
+        if (item.dataset.track === "secure_route_opened") trackPublicEvent("secure_route_opened");
+        else trackPublicEvent(item.dataset.track, { link_target: item.getAttribute("href") || "button" });
+      }
+    });
 
-<script>
-(function(){
-  // The line lands first. Then "Show up, Santa Barbara." rises from flat to standing — no vibration.
-  var h=document.getElementById('hl'); if(!h) return;
-  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  h.classList.add('live');
-  function standUp(){
-    h.classList.remove('away'); h.classList.add('reset'); void h.offsetWidth; h.classList.remove('reset');
-    void h.offsetWidth; h.classList.add('up');   // and it stays up
-  }
-  setTimeout(standUp, 1800);
-})();
-(function(){
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var photo = document.querySelector('.hero .photo');
-  if(!photo || reduce) return;
-  var ticking=false;
-  function move(){ photo.style.transform='translateY('+(window.scrollY*0.22)+'px)'; ticking=false; }
-  window.addEventListener('scroll',function(){ if(!ticking){ requestAnimationFrame(move); ticking=true; } },{passive:true});
-})();
-</script>
-</body></html>
+    var nav = document.getElementById("nav");
+    function syncNav() { nav.classList.toggle("scrolled", window.scrollY > 32); }
+    syncNav();
+    addEventListener("scroll", syncNav, { passive: true });
+
+    var providers = {
+      goodsam: ["Direct-service provider", "Executed C2/C3 agreements; C5 approved direct/pooled budget lines", "Cohorts 2–5", "Actual C5 payments require invoice confirmation"],
+      fsa: ["Historical direct-service provider", "Executed contract ceilings", "Cohorts 2–3", "C3 role ended June 30, 2023; no published misconduct finding"],
+      bwell: ["County grantee / operator", "State award authority", "Cohorts 3 and 5", "Award authority is not actual expenditure"],
+      pd: ["County grantee / operator", "State award and approved internal allocations", "Cohorts 2, 3 and 5", "Prime grantee for C2; participant-level payments not applicable"],
+      sheriff: ["Public operator", "Approved internal allocation", "Cohort 3", "Actual cost detail requires County expenditure records"],
+      da: ["Public operator", "Approved internal allocation", "Cohort 3", "Actual cost detail requires County expenditure records"],
+      rda: ["Evaluator", "Executed contract ceiling", "Cohort 2", "Evaluation role—not a direct-service provider"],
+      ucsb: ["Evaluator", "Executed contract ceiling", "Cohorts 3 and 5", "Evaluation role—not a direct-service provider"],
+      cada: ["Approved/planned provider", "Pooled approved C5 budget", "Cohort 5", "Organization-specific contract and payment not publicly verified"],
+      tarzana: ["Approved/planned provider", "Pooled approved C5 budget", "Cohort 5", "Organization-specific contract and payment not publicly verified"],
+      stalwart: ["County-funded recovery-residence provider", "BWell ceiling $1,089,850 (2024–27); Probation ceiling $84,500 (FY2026–27)", "22 BWell beds available; County reported 93 clients and 64% successful discharge in FY2024–25", "Ceilings are not cash paid; overlapping beds cannot be added; no direct CenCal/CalAIM payment or substantiated duplicate billing finding located"]
+    };
+    var fields = ["Role", "Money basis", "Program period", "Limitation"];
+    var select = document.getElementById("provider-select");
+    var result = document.getElementById("provider-result");
+    var stalwartSpotlight = document.getElementById("stalwart-spotlight");
+    function showProvider() {
+      var data = providers[select.value];
+      result.innerHTML = data.map(function (value, index) { return '<div class="provider-field"><span>' + fields[index] + '</span><strong>' + value + '</strong></div>'; }).join("");
+      stalwartSpotlight.hidden = select.value !== "stalwart";
+    }
+    select.addEventListener("change", function () { showProvider(); trackPublicEvent("provider_change", { provider_key: select.value }); });
+    showProvider();
+
+    var ideas = {
+      donation: ["Organizing", "Build a local system that matches useful goods with verified needs.", "Secure a qualified nonprofit or fiscal sponsor and a temporary site.", "Space, vehicles, inventory discipline and three provider partners.", "No cash or public drop-offs until a qualified entity and public controls are in place.", "Goods are tracked from intake to verified local distribution."],
+      voice: ["Intake not open", "Build a community path for acknowledgment and appropriate next steps.", "Establish staffing, privacy, governance and safe escalation before sensitive intake.", "Human review, response standards and a tracker-free private route.", "No promise of anonymity or resolution before the protected system exists.", "A tested, clearly disclosed intake process opens with trained review."],
+      recognition: ["Moderation design", "Make effective service visible and repeatable.", "Adopt permission, verification and moderation standards before publication.", "Community nominations, provider confirmation and editorial review.", "No private client information or unverified claims are published.", "Useful practices can be recognized with informed permission."],
+      directory: ["Directory not live", "Organize services around a resident’s need instead of agency structure.", "Build the verified provider registry with dates, eligibility and capacity.", "Providers willing to maintain accurate information.", "Every entry is dated, sourced and easy to correct.", "People reach the right door with fewer failed handoffs."],
+      outreach: ["Concept", "Meet isolated neighbors with dignity, practical supplies and conversation.", "Co-design a small pilot with an established outreach provider.", "Trained pairs, supplies, safety protocol, insurance and referral partners.", "No exploitative photography, coercion, or unsupported clinical work.", "An authorized pilot measures contacts, accepted help and completed handoffs."],
+      sober: ["Concept", "Create belonging that is social, local and low pressure.", "Define the program with an established recovery-support provider.", "Hosts, accessible venues and clear community conduct.", "Activities complement—not replace—treatment and recovery support.", "An authorized program measures voluntary attendance and connection."],
+      peer: ["Partners needed", "Turn lived experience into recognized service and paid work.", "Map certification, supervision and eligible employer pathways.", "Certified supervisors, eligible providers and workforce partners.", "Never promise Medi-Cal payment without service and provider eligibility.", "More qualified peers move into sustainable local roles."],
+      reentry: ["Public partners needed", "Begin the return home before release and stay through the handoff.", "Convene custody, probation, health, workforce and lived-experience leaders.", "Public authority, service partners and participant consent.", "Participation rights and independent oversight are designed first.", "Identity, care, housing and work connections survive release."],
+      accountability: ["Building governance", "Turn concerns into fair review, repair and measurable improvement.", "Adopt intake, response, correction, appeal and publication rules.", "Independent reviewers, provider participation and privacy controls.", "Unverified person-plus-allegation posts never become public content.", "Verified patterns lead to documented fixes and public totals."],
+      work: ["Partners needed", "Connect recovery and reentry to work, education and benefits without losing support.", "Recruit a small group of local employers and mentors.", "Employers, SBCC/workforce partners, peers and benefits expertise.", "No exploitative labor or benefit advice outside qualified roles.", "Placements persist and participants advance toward their goals."],
+      family: ["Co-design required", "Help families reconnect safely around the child’s and family’s needs.", "Form a protected design group with youth and family specialists.", "Youth protection, family services and lived-experience leadership.", "No reunification pressure; safety and consent control the pathway.", "Families report safer, steadier and supported connections."],
+      women: ["Women-led design required", "Create a separate reentry and recovery track responsive to women’s safety and experience.", "Recruit women with professional and lived experience to lead design.", "Women-led providers, housing, family and trauma expertise.", "The track cannot be designed or governed as an afterthought.", "Women define the measures and report safer transitions."],
+      sentencing: ["Public approval required", "Explore lawful, rigorous alternatives that combine accountability, work and learning.", "Document authority, eligibility, rights and evidence before proposing a pilot.", "Sheriff, courts, County, counsel and independent oversight.", "Voluntary eligibility and due-process protections are non-negotiable.", "Approved participants complete demanding, measured pathways."],
+      campus: ["Feasibility required", "Explore a dignity-centered reentry program at the active Calle Real custody campus.", "Commission a program, authority, facility and operating feasibility study.", "Sheriff, County, labor, safety, counsel and lived-experience partners.", "Do not describe the historic Honor Farm as vacant or available.", "A lawful pilot is independently evaluated before expansion."],
+      referral: ["Privacy design required", "Let residents and partners see whether a handoff moved without exposing private details.", "Define the minimum status data and consent model.", "Privacy counsel, eligible providers and secure infrastructure.", "Access is role-limited, consent-based and fully logged.", "Fewer referrals disappear between organizations."],
+      fleet: ["Coalition required", "Use combined purchasing power to lower nonprofit transportation costs.", "Survey qualified nonprofits and fleet needs.", "Insurers, dealers, nonprofits and transparent transfer rules.", "Restricted grants remain separate and conflicts are published.", "More reliable vehicles reach verified service organizations."],
+      volunteer: ["Concept", "Turn community energy into useful, visible work without creating unsafe or duplicative projects.", "Ask established nonprofits which one-day projects they can authorize and supervise.", "Qualified operators, insurance, safety plans, tools and clear volunteer roles.", "No unsupervised work with vulnerable people or replacement of paid staff.", "Partners complete practical projects and report what changed."],
+      housing: ["Long-term / partner-led", "Create a physical home for navigation, connection, learning and practical support.", "Define the services before searching for a building.", "Operating partners, capital, governance and neighborhood dialogue.", "No property promise before feasibility, authority and funding.", "A sustainable hub strengthens—not duplicates—existing providers."],
+      funding: ["Researching", "Show how public funds move, what providers report and what remains unverifiable.", "Publish sourced funding records and send targeted records requests.", "Contracts, invoices, outcome reports and documented corrections.", "Award, contract ceiling, payment, and reported outcome remain visibly separate.", "Residents can follow public records without mistaking estimates for facts."]
+    };
+    var dialog = document.getElementById("idea-dialog");
+    var dialogTitle = document.getElementById("dialog-title");
+    var dialogStage = document.getElementById("dialog-stage");
+    var dialogSummary = document.getElementById("dialog-summary");
+    var dialogFirst = document.getElementById("dialog-first");
+    var dialogNeeds = document.getElementById("dialog-needs");
+    var dialogSafe = document.getElementById("dialog-safe");
+    var dialogSuccess = document.getElementById("dialog-success");
+    document.querySelectorAll(".open-idea").forEach(function (button) {
+      button.addEventListener("click", function () {
+        var card = button.closest(".idea-card");
+        var data = ideas[button.dataset.idea];
+        dialogTitle.textContent = card.querySelector("h3").textContent;
+        dialogStage.textContent = data[0]; dialogSummary.textContent = data[1]; dialogFirst.textContent = data[2]; dialogNeeds.textContent = data[3]; dialogSafe.textContent = data[4]; dialogSuccess.textContent = data[5];
+        document.body.classList.add("modal-open"); dialog.showModal();
+      });
+    });
+    dialog.querySelector(".close").addEventListener("click", function () { dialog.close(); });
+    dialog.addEventListener("click", function (event) { if (event.target === dialog) dialog.close(); });
+    dialog.addEventListener("close", function () { document.body.classList.remove("modal-open"); });
+
+    trackPublicEvent("page_view", { referrer_present: Boolean(document.referrer) });
+  </script>
+</body>
+</html>
